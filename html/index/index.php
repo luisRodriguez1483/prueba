@@ -18,10 +18,12 @@
                 <h3>¡Bienvenido!</h3>
             </div>
             <div class="modal-body">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogIn" placeholder="Usuario">
-                    <input type="password" class="form-control" name="txtPasswordLogIn" id="txtPasswordLogIn" placeholder="Contraseña">
-                </div>
+                <div role="form" onkeypress="runScriptLogin(event)">
+                   <div class="form-group">
+                        <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogIn" placeholder="Usuario">
+                        <input type="password" class="form-control" name="txtPasswordLogIn" id="txtPasswordLogIn" placeholder="Contraseña">
+                    </div>
+               </div>
             </div>
             <div class="modal-footer">
                 <input type="button" id="btnLogIn" class="btn btn-success" value="Enviar"/>
@@ -29,6 +31,8 @@
         </div>
     </div>
 </div>
+   
+   <script type="text/javascript" src="view/app/js/login.js"></script>
 
    <section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="4000" id="index-slider-0">
     <div>
