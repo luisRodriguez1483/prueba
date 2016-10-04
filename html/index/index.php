@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<?php
+  //include ('html/overAll/indexHeader.php');
+    include (HTML_DIR.'/overAll/header.php');
+?>
+<body>
+<?php 
+    include(HTML_DIR.'/overAll/indextopNav.php');
+?>
+
+<div id="modalLogIn" class="modal fade in" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">x</button>
+                <h3>¡Bienvenido!</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogIn" placeholder="Usuario">
+                    <input type="password" class="form-control" name="txtPasswordLogIn" id="txtPasswordLogIn" placeholder="Contraseña">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="button" id="btnLogIn" class="btn btn-success" value="Enviar"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+   <section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="4000" id="index-slider-0">
+    <div>
+        <div>
+            <div>
+                <ol class="carousel-indicators">
+                    <li data-app-prevent-settings="" data-target="#index-slider-0" data-slide-to="0" class="active"></li><li data-app-prevent-settings="" data-target="#index-slider-0" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#index-slider-0" class="" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(assets/images/imagen1-2000x1290-95.png);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay" style="opacity: 0.3;"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2 text-xs-center">
+                                        <h2 class="mbr-section-title display-1">Bienvenido a SocialNetWork</h2>
+                                        <p class="mbr-section-lead lead">Tu nueva red social.<br>Búsqueda de empleo y contratación de personal.</p>
+
+                                        <div class="mbr-section-btn"> <a class="btn btn-lg btn-white btn-white-outline" href="index.html#index-features1-0">Da click para comenzar<br></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(assets/images/imagen2-2000x1290-36.jpg);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2 text-xs-center">
+                                        <h2 class="mbr-section-title display-1"></h2>
+                                        <p class="mbr-section-lead lead">Todos los días una nueva oportunidad de trabajo.</p>
+
+                                        <div class="mbr-section-btn"> <a class="btn btn-lg btn-white btn-white-outline" href="index.html#index-features1-0">Da click para comenzar</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(assets/images/imagen3-2000x1290-84.png);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay" style="background-color: rgb(0, 0, 0);"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2 text-xs-center">
+                                        
+                                        <p class="mbr-section-lead lead">¡Contrata profesionales con solo un click!</p>
+
+                                        <div class="mbr-section-btn"> <a class="btn btn-lg btn-white btn-white-outline" href="index.html#index-features1-0">Da click para comenzar</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#index-slider-0">
+                    <span class="icon-prev" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a data-app-prevent-settings="" class="right carousel-control" role="button" data-slide="next" href="#index-slider-0">
+                    <span class="icon-next" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-cards mbr-section mbr-section-nopadding" id="index-features1-0" style="background-color: rgb(255, 255, 255);">
+
+        
+
+    <div class="mbr-cards-row row striped">
+
+        <div class="mbr-cards-col col-xs-12 col-lg-6" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="assets/images/empresa-600x600-48.png" class="card-img-top" alt="Empresa" id="#imgCompany"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-6" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="assets/images/persona-600x600-10.png" class="card-img-top" alt="Persona" id="#imgPerson"></div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+</section>
+
+<section class="mbr-section mbr-section-md-padding mbr-footer footer1" id="index-contacts1-0" style="background-color: rgb(46, 46, 46); padding-top: 90px; padding-bottom: 90px;">
+    
+    <div class="container">
+        <div class="row">
+            <div class="mbr-footer-content col-xs-12 col-md-3">
+                <div><img src="assets/images/sn-128x91-85.png"></div>
+            </div>
+            <div class="mbr-footer-content col-xs-12 col-md-3">
+                <p><strong>Address</strong><br>
+1234 Street Name<br>
+City, AA 99999</p>
+            </div>
+            <div class="mbr-footer-content col-xs-12 col-md-3">
+                <p><strong>Contacts</strong><br>
+Email: support@snk.com<br>
+Phone: +1 (0) 000 0000 001<br>
+Fax: +1 (0) 000 0000 002</p>
+            </div>
+            <div class="mbr-footer-content col-xs-12 col-md-3">
+                <p>Términos y condiciones<br><br>Aviso de privacidad</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<?php
+include (HTML_DIR.'/overAll/footer.php');
+?>
+</body>
+</html>
