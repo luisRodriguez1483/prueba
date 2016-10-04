@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <?php
   //include ('html/overAll/indexHeader.php');
     include (HTML_DIR.'/overAll/header.php');
 ?>
 <body>
-<?php 
+<?php
     include(HTML_DIR.'/overAll/indextopNav.php');
 ?>
 
@@ -41,7 +42,7 @@
                         <div class="mbr-table-cell">
                             <div class="mbr-overlay" style="opacity: 0.3;"></div>
                             <div class="container-slide container">
-                                
+
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2 text-xs-center">
                                         <h2 class="mbr-section-title display-1">Bienvenido a SocialNetWork</h2>
@@ -56,7 +57,7 @@
                         <div class="mbr-table-cell">
                             <div class="mbr-overlay"></div>
                             <div class="container-slide container">
-                                
+
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2 text-xs-center">
                                         <h2 class="mbr-section-title display-1"></h2>
@@ -71,10 +72,10 @@
                         <div class="mbr-table-cell">
                             <div class="mbr-overlay" style="background-color: rgb(0, 0, 0);"></div>
                             <div class="container-slide container">
-                                
+
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                        
+
                                         <p class="mbr-section-lead lead">¡Contrata profesionales con solo un click!</p>
 
                                         <div class="mbr-section-btn"> <a class="btn btn-lg btn-white btn-white-outline" href="index.html#index-features1-0">Da click para comenzar</a></div>
@@ -100,7 +101,7 @@
 
 <section class="mbr-cards mbr-section mbr-section-nopadding" id="index-features1-0" style="background-color: rgb(255, 255, 255);">
 
-        
+
 
     <div class="mbr-cards-row row striped">
 
@@ -115,19 +116,19 @@
             <div class="container">
                 <div class="card cart-block">
                     <div class="card-img"><img src="assets/images/persona-600x600-10.png" class="card-img-top" alt="Persona" id="#imgPerson"></div>
-                    
+
                 </div>
             </div>
         </div>
-        
-        
-        
-        
+
+
+
+
     </div>
 </section>
 
 <section class="mbr-section mbr-section-md-padding mbr-footer footer1" id="index-contacts1-0" style="background-color: rgb(46, 46, 46); padding-top: 90px; padding-bottom: 90px;">
-    
+
     <div class="container">
         <div class="row">
             <div class="mbr-footer-content col-xs-12 col-md-3">

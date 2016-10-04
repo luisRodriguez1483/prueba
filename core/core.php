@@ -6,7 +6,7 @@ define ('HTML_DIR','html/');
 define ('APP_TITLE','SocialNetWork');
 
 define("HOST", 'localhost');
-define("USUARIO", 'root');
+define("USER", 'root');
 define("PASSWORD", '');
-define("BASE",'socialNetWork');
+define("DATABASE",'socialNetWork');
 ?>
