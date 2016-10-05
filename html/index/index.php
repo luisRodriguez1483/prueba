@@ -19,16 +19,16 @@
             </div>
             <div class="modal-body">
                 
-                <div role="form" onkeypress="runScriptLogin(event)">
+                <div role="form" onkeypress="enterLogin(event)">
                    <div class="form-group">
-                        <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogIn" placeholder="Usuario">
-                        <input type="password" class="form-control" name="txtPasswordLogIn" id="txtPasswordLogIn" placeholder="Contraseña">
+                        <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogin" placeholder="Usuario">
+                        <input type="password" class="form-control" name="txtPasswordLogIn" id="txtPasswordLogin" placeholder="Contraseña">
                     </div>
                </div>
                
             </div>
             <div class="modal-footer">
-                <input type="button" id="btnLogIn" class="btn btn-success" value="Enviar"/>
+                <input type="button" id="btnLogIn" class="btn btn-success" onclick="login()" value="Enviar"/>
             </div>
         </div>
     </div>

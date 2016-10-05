@@ -17,6 +17,6 @@
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <script type="text/javascript" src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="view/app/js/jquery.js"></script>
   <title><?php echo APP_TITLE ?></title>
 </head>
