@@ -27,8 +27,8 @@ function login(){
             success: function(result,status,xhr){
 
             },error: function(xhr){
-                console.error(xhr.status": "+xhr.statusText);
-                alert(xhr.status": "+xhr.statusText);
+                console.error(xhr.status +": "+ xhr.statusText);
+                alert(xhr.status +": "+ xhr.statusText);
             }
 
         })
