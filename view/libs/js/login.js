@@ -3,7 +3,7 @@ function enterLogin(e){
     if(e.keyCode==13){
         login();
     }
-    
+
 }
 
 function login(){
@@ -20,7 +20,10 @@ function login(){
         $.ajax({
             url: "",
             type:"",
-            data:{},
+            data:{
+                userName:user,
+                pass:password
+            },
             success: function(result,status,xhr){
 
             },error: function(xhr){

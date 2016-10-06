@@ -3,11 +3,11 @@
 
 <?php
   //include ('html/overAll/indexHeader.php');
-    include (HTML_DIR.'/overAll/header.php');
+    include ('view/overAll/header.php');
 ?>
 <body>
 <?php
-    include(HTML_DIR.'/overAll/indextopNav.php');
+    include('view/overAll/indextopNav.php');
 ?>
 
 <div id="modalLogIn" class="modal fade in" >
@@ -18,14 +18,14 @@
                 <h3>¡Bienvenido!</h3>
             </div>
             <div class="modal-body">
-                
+
                 <div role="form" onkeypress="enterLogin(event)">
                    <div class="form-group">
                         <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogin" placeholder="Usuario">
                         <input type="password" class="form-control" name="txtPasswordLogIn" id="txtPasswordLogin" placeholder="Contraseña">
                     </div>
                </div>
-               
+
             </div>
             <div class="modal-footer">
                 <input type="button" id="btnLogIn" class="btn btn-success" onclick="login()" value="Enviar"/>
@@ -33,7 +33,7 @@
         </div>
     </div>
 </div>
-   
+
    <script type="text/javascript" src="view/app/js/login.js"> </script>
 
    <section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="4000" id="index-slider-0">
@@ -159,7 +159,7 @@ Fax: +1 (0) 000 0000 002</p>
     </div>
 </section>
 <?php
-include (HTML_DIR.'/overAll/footer.php');
+include ('view/overAll/footer.php');
 ?>
 </body>
 </html>

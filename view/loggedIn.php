@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <?php
-include (HTML_DIR.'overAll/header.php');
+include ('view/overAll/header.php');
 ?>
 
 <body>
 <?php
-include(HTML_DIR.'overAll/loggedInTopNav.php');    
+include('view/overAll/loggedInTopNav.php');
 ?>
 
 <section class="engine"></section><section class="mbr-cards mbr-section mbr-section-nopadding mbr-after-navbar" id="index-features1-0" style="background-color: rgb(255, 255, 255);">
@@ -60,7 +60,7 @@ include(HTML_DIR.'overAll/loggedInTopNav.php');
     </div>
 </section>
 <?php
-include (HTML_DIR.'overAll/footer.php');    
+include ('view/overAll/footer.php');
 ?>
   </body>
 </html>

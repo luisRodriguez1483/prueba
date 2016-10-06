@@ -1,5 +1,5 @@
 <?php
 
-include ('html/index/index.php');
+include ('view/index/index.php');
 
 ?>

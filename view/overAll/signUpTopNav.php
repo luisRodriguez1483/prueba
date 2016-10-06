@@ -1,4 +1,4 @@
-<section id="index-ext_menu-0">
+<section id="signUp-ext_menu-0">
 
     <nav class="navbar navbar-dropdown navbar-fixed-top">
         <div class="container">
@@ -7,8 +7,8 @@
                 <div class="mbr-table-cell">
 
                     <div class="navbar-brand">
-                        <a href="index.html" class="navbar-logo"><img src="../assets/images/sn-179x128-1.png" alt="SocialNetWork"></a>
-                        <a class="navbar-caption text-white" href="#">SocialNetWork</a>
+                        <a href="#top" class="navbar-logo"><img src="assets/images/sn-179x128-1.png" alt="SocialNetwork"></a>
+                        <a class="navbar-caption" href="#">SocialNetWork</a>
                     </div>
 
                 </div>
@@ -18,7 +18,7 @@
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item dropdown"><a class="nav-link link" href="#" aria-expanded="false">Mensajes</a></li><li class="nav-item dropdown"><a class="nav-link link" href="#" aria-expanded="false">Empleo</a></li><li class="nav-item dropdown"><a class="nav-link link" href="#" aria-expanded="false">Perfil</a></li><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="#">Cerrar Sesión</a></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="#"></a></li><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="#">Regresar</a></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
