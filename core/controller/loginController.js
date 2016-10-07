@@ -25,12 +25,14 @@ function login(){
                 userName:user,
                 pass:password
             },
-            success: function(data,status,xhr){
-                alert("sucess "+data+" "+status +" "+ xhr);
+            success: function(msg){
+                if(msg==1){
+                    alert("hola");
+                }
 
             },error: function(jqXHR,textstatus,errorThrown){
                // console.error(xhr.status +": "+ xhr.statusText);
-                alert("Error: "+jqXHR +" "+textstatus+ " " +errorThrown);
+                alert("Error: "+jqXHR.resoponseText +" "+textstatus.resoponseText+ " " +errorThrown.resoponseText);
             }
 
         });

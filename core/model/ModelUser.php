@@ -1,13 +1,10 @@
 <?php
-class ModelUser extends Connection{
+class ModelUser{
 
-    public __construct(){
-    }
-
-    public function userLogin($user,$password){
+    public function userLogin(){
         //$query="";
         //$result=mysqli_query(this->getConnection(),$query);
-
+        echo 1;
     }
 }
 ?>
