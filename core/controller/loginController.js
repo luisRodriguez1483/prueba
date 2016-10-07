@@ -26,9 +26,7 @@ function login(){
                 pass:password
             },
             success: function(msg){
-                if(msg==1){
-                    alert("hola");
-                }
+                alert(msg);
 
             },error: function(jqXHR,textstatus,errorThrown){
                // console.error(xhr.status +": "+ xhr.statusText);
