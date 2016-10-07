@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <?php
   //include ('html/overAll/indexHeader.php');
     include ('view/overAll/header.php');
@@ -34,7 +33,7 @@
     </div>
 </div>
 
-   <script type="text/javascript" src="view/libs/js/login.js"> </script>
+   <script type="text/javascript" src="core/controller/loginController.js"> </script>
 
    <section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="4000" id="index-slider-0">
     <div>

@@ -18,20 +18,22 @@ function login(){
     }if(password.length != 0 && user.length != 0){
 
         $.ajax({
-            url: "",
-            type:"",
+            //url: "index.php?view=loggedIn",
+            url: "core/controller/loggedInController.php",
+            type:"POST",
             data:{
                 userName:user,
                 pass:password
             },
-            success: function(result,status,xhr){
+            success: function(data,status,xhr){
+                alert("sucess "+data+" "+status +" "+ xhr);
 
-            },error: function(xhr){
-                console.error(xhr.status +": "+ xhr.statusText);
-                alert(xhr.status +": "+ xhr.statusText);
+            },error: function(jqXHR,textstatus,errorThrown){
+               // console.error(xhr.status +": "+ xhr.statusText);
+                alert("Error: "+jqXHR +" "+textstatus+ " " +errorThrown);
             }
 
-        })
+        });
 
     }
 }

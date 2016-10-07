@@ -6,7 +6,8 @@
 </footer>
 
 
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <!--<script src="assets/web/assets/jquery/jquery.min.js"></script>-->
+
   <script src="assets/tether/tether.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/smooth-scroll/SmoothScroll.js"></script>
