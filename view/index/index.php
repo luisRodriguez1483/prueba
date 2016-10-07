@@ -113,14 +113,14 @@
         <div class="mbr-cards-col col-xs-12 col-lg-6" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/empresa-600x600-48.png" class="card-img-top" alt="Empresa" id="#imgCompany"></div>
+                    <div class="card-img"><img src="assets/images/empresa-600x600-48.png" class="card-img-top" alt="Empresa" id="imgCompany"></div>
                 </div>
             </div>
         </div>
         <div class="mbr-cards-col col-xs-12 col-lg-6" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/persona-600x600-10.png" class="card-img-top" alt="Persona" id="#imgPerson"></div>
+                    <div class="card-img"><img src="assets/images/persona-600x600-10.png" class="card-img-top" alt="Persona" id="imgPerson"></div>
 
                 </div>
             </div>
