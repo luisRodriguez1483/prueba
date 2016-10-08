@@ -16,7 +16,8 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 <h3>¡Bienvenido!</h3>
             </div>
-            <div id="loginError">
+            <div id="loginError" style="text-align:center;">
+
                 </div>
             <div class="modal-body">
                 <div role="form" onkeypress="enterLogin(event)">

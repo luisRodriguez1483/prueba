@@ -2,7 +2,7 @@ $(document).on('click','#imgCompany',function(){
 
     alert();
 
-    window.location="view=signUp.php";
+    window.location="?view=signUp";
 
    /* var company=1;
 

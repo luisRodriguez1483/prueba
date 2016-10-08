@@ -80,8 +80,19 @@ include ('view/overAll/signUpTopNav.php');
 
                 <div class="col-xs-12 col-lg-4">
 
-                    <div class="mbr-testimonial card mbr-testimonial-lg">
-                        <div class="card-block"><p>“its really very amazing app that makes me finish html page in 3 minutes ( that's usually takes more than 1 hours at least from me if i did it from scratch). i hope to have very big library and plugins for this APP thanks again for your nice application”</p><p><br></p></div>
+                    <div class="mbr-testimonial card ">
+                        <div class="card-block">
+                             <div class="">
+                <div role="form">
+                   <div class="form-group">
+                        <input type="text" class="form-control" id="txtUserLogin" placeholder="Usuario">
+                        <input type="password" class="form-control" id="txtPass" placeholder="Contraseña">
+                        <input type="password" class="form-control" id="txtRepeatPass" placeholder="Repite tu contraseña">
+                    </div>
+               </div>
+
+            </div>
+                        </div>
                         <div class="mbr-author card-footer">
                             <div class="mbr-author-img"><img src="assets/images/face3.jpg" class="img-circle" alt="GuardarInformacionUsuario"></div>
                             
