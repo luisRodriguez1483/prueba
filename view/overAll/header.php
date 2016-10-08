@@ -19,13 +19,9 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 
-<<<<<<< HEAD
-  <script type="text/javascript" src="view/libs/js/generalFunctions.js"></script>
   <script type="text/javascript" src="view/libs/js/userLog.js"></script>
-=======
   <script type="text/javascript" src="view/libs/js/jquery.js"></script>
   <script type="text/javascript" src="core/controller/userLog.js"></script>
->>>>>>> origin/master
 
   <title><?php echo APP_TITLE ?></title>
 </head>
