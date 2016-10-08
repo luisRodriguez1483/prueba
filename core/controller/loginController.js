@@ -13,12 +13,10 @@ function login(){
         $('#loginError').html("<div class='alert alert-dismissible alert-warning'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Hay algo vacío!</strong> <a href='#' class='alert-link'>Ingresa tu usuario.</a></div>");
         $('#txtUserLogin').css('border-color','#ed620c');
         $('#txtUserLogin').focus();
-        alert("vacio 1");
     }if(password.length === 0){
         $('#loginError').html("<div class='alert alert-dismissible alert-warning'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Hay algo vacío!</strong> <a href='#' class='alert-link'>Ingresa tu contraseña.</a></div>");
         $('#txtUserLogin').css('border-color','#ed620c');
         $('#txtPasswordLogin').focus();
-        alert("vacio 2");
     }if(password.length != 0 && user.length != 0){
 
         $.ajax({
