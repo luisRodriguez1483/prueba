@@ -16,10 +16,9 @@
                 <button type="button" class="close" data-dismiss="modal">x</button>
                 <h3>¡Bienvenido!</h3>
             </div>
-            <div class="modal-body">
-                <div id="loginError">
+            <div id="loginError">
                 </div>
-
+            <div class="modal-body">
                 <div role="form" onkeypress="enterLogin(event)">
                    <div class="form-group">
                         <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogin" placeholder="Usuario">

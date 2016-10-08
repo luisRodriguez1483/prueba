@@ -25,12 +25,15 @@ function login(){
                 pass:password
             },
             success: function(msg){
-                if(msg === 1){
-                    window.location="?view=loggedIn";
-                }else if(msg === 2){
-                    $('#errorLogin').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>!Usuario incorrecto!</strong> <a href='#' class='alert-link'></a> Intenta de nuevo.</div>");
-                }else if(msg === 3){
-                    $('#errorLogin').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>!Contraseña incorrecta!</strong> <a href='#' class='alert-link'></a> Intenta de nuevo.</div>");
+                if(msg == 1){
+                    window.location="?view=login";
+                }else if(msg == 2){
+                    $('#loginError').html("<label class='label label-danger'>¡Usuario incorrecto!</label>");
+                }else if(msg == 3){
+                    $('#txtPasswordLogin').focus(function(){
+                        $('#txtPasswordLogin').css('border-bottom-color','#ed0c0c');
+                    });
+                    $('#loginError').html("<div class='alert alert-dismissible alert-danger'><strong>!Contraseña incorrecta!</strong> <a href='#' class='alert-link'></a> Intenta de nuevo.</div>");
                 }
 
             },error: function(jqXHR,textstatus,errorThrown){
