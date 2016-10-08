@@ -18,7 +18,6 @@ function login(){
     }if(password.length != 0 && user.length != 0){
 
         $.ajax({
-            //url: "index.php?view=loggedIn",
             url: "core/controller/loggedInController.php",
             type:"POST",
             data:{
@@ -26,7 +25,13 @@ function login(){
                 pass:password
             },
             success: function(msg){
-                alert(msg);
+                if(msg === 1){
+                    window.location="?view=loggedIn";
+                }else if(msg === 2){
+                    $('#errorLogin').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>!Usuario incorrecto!</strong> <a href='#' class='alert-link'></a> Intenta de nuevo.</div>");
+                }else if(msg === 3){
+                    $('#errorLogin').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>!Contraseña incorrecta!</strong> <a href='#' class='alert-link'></a> Intenta de nuevo.</div>");
+                }
 
             },error: function(jqXHR,textstatus,errorThrown){
                // console.error(xhr.status +": "+ xhr.statusText);

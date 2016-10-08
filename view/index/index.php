@@ -17,6 +17,8 @@
                 <h3>¡Bienvenido!</h3>
             </div>
             <div class="modal-body">
+                <div id="loginError">
+                </div>
 
                 <div role="form" onkeypress="enterLogin(event)">
                    <div class="form-group">

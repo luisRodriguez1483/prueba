@@ -5,5 +5,5 @@
     $password=$_POST["pass"];
 
     $objUser = new ModelUser();
-    $objUser->userLogin();
+    $objUser->userLogin($user,$password);
 ?>
