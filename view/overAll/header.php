@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 
   <script type="text/javascript" src="view/libs/js/jquery.js"></script>
-  <script type="text/javascript" src="view/libs/js/userLog.js"></script>
+  <script type="text/javascript" src="core/controller/userLog.js"></script>
 
   <title><?php echo APP_TITLE ?></title>
 </head>
