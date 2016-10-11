@@ -1,16 +1,34 @@
-$(document).on('click','#imgCompany',function(){
+/*$(document).on('click','#imgCompany',function(){
 
-    alert();
+   var tipoUsuario=1;
 
-    window.location="?view=signUp";
+    $.ajax({
+        url:"?view=signUp",
+        type:"GET",
+        data:{numero:tipoUsuario},
+        success:function(data){
 
-   /* var company=1;
+          window.location="?view=signUp";
+        }
+    });
+
+});*/
+
+
+//$(document).on('click','#imgPerson',function(){
+
+  //  alert();
+
+
+   /*var tipoUsuario=1;
 
     $.ajax({
         url="overAll/signUpTopNav.php",
         type="POST",
-        data:{company:company}
+        data:{tipoUsuario:tipoUsuario},
+        success:function(data){
+          window.location="?view=signUp";
+        }
     });
-    */
-});
-
+*/
+//});
