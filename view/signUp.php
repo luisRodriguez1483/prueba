@@ -87,17 +87,9 @@ include ('view/overAll/signUpTopNav.php');
                              <div class="">
                 <div role="form">
                    <div class="form-group">
-                       <table style="text-align:center">
-                           <tr>
-                              <td>
-                               <div id="InfoError">
 
-                               </div>
-                              </td>
-                           </tr>
-                       </table>
-                        <input type="email" class="form-control" id="txtMail" placeholder="Correo">
-                        <input type="email" class="form-control" id="txtRepMail" placeholder="Repite tu correo">
+                        <input type="text" class="form-control" id="txtMail" placeholder="Correo">
+                        <input type="text" class="form-control" id="txtRepMail" placeholder="Repite tu correo">
                         <input type="tel" class="form-control" id="txtNumTel" placeholder="Celular">
                     </div>
                </div>
@@ -105,15 +97,15 @@ include ('view/overAll/signUpTopNav.php');
             </div>
                         </div>
                         <div class="mbr-author card-footer">
-                            <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformacionUsuario"></div>
+                            <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformacionUsuario" id="fistLog"></div>
 
 
                         </div>
                     </div>
                 </div>
-                    <div class="col-xs-12 col-lg-4">
-                       <div class="mbr-testimonial card mbr-testimonial-lg">
-                        <div class="card-block">
+                    <div class="col-xs-12 col-lg-4" >
+                       <div class="mbr-testimonial card mbr-testimonial-lg" >
+                        <div class="card-block" id="secondLog">
                             <input type="text" class="form-control" id="txtState" placeholder="Estado" >
                             <input type="text" class="form-control" id="txtColonia" placeholder="Colonia">
                             <input type="text" class="form-control" id="txtCalle" placeholder="Calle">
@@ -126,19 +118,40 @@ include ('view/overAll/signUpTopNav.php');
 
                         </div>
                     </div>
-                </div><div class="col-xs-12 col-lg-4">
+                </div>
+                    <div class="col-xs-12 col-lg-4">
 
                     <div class="mbr-testimonial card mbr-testimonial-lg">
-                        <div class="card-block">
+                        <div class="card-block" id="lastLog">
+                             <input type="text" class="form-control" id="txtUserReg" placeholder="Usuario">
+                             <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña">
+                             <input type="password" class="form-control" id="txtRepPassword" placeholder="Repite tu contraseña">
+
                             <?php
                             $type = $_GET['type'];
                               if($type == 1){
-                                echo "Datos para empresa";
-                              }else{
-                                echo "datos para persona";
-                              }
+
 
                              ?>
+                             <input type="text" class="form-control" id="txtGiro" placeholder="Giro">
+                             <input type="text" class="form-control" id="txtRFC" placeholder="RFC">
+
+                             <?php
+                              }else{
+                            ?>
+                            <input type="text" class="form-control" id="txtNombrePer" placeholder="Nombre">
+                            <input type="text" class="form-control" id="txtApePat" placeholder="Apellido Paterno">
+                            <input type="text" class="form-control" id="txtApeMat" placeholder="Apellido Materno">
+                            <input type="text" class="form-control" id="txtCurp" placeholder="CURP">
+                            <input type="text" class="form-control" id="txtFechaNac" placeholder="Fecha Nacimiento">
+                            Sexo: <select>
+                                <option value="0" class="form-control">Elija una opcion</option>
+                                <option>Maculino</option>
+                                <option>Femenino</option>
+                            </select>
+                            <?php
+                              }
+                            ?>
                         </div>
                         <div class="mbr-author card-footer">
                             <div class="mbr-author-img"><img src="assets/images/face2.jpg" class="img-circle" alt="GuardarInformaciónContacto"></div>
@@ -155,7 +168,7 @@ include ('view/overAll/signUpTopNav.php');
     </div>
 
 </section>
-
+<script type="text/javascript" src="../core/controller/userLogController.js"></script>
 <?php
 include ('view/overAll/footer.php');
 ?>

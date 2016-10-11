@@ -131,7 +131,7 @@
                 </div>
             </div>
         </div>
-<script type="text/javascript" src="core/controller/userLog.js"></script>
+
 
 
 

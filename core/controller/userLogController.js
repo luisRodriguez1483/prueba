@@ -1,34 +1,27 @@
-/*$(document).on('click','#imgCompany',function(){
+$(document).ready(function(){
 
-   var tipoUsuario=1;
+
+    $("#secondLog").children().attr("disabled","disabled");
+    $("#lastLog").children().attr("disabled","disabled");
+});
+
+$(document).on('click','#fistLog',function(){
+
+    var email = $('#txtMail').val();
+    var repEmail = $('#txtRepMail').val();
+    var tel = $('#txtNumTel').val();
+
+
+    alert(email+" "+repEmail+" "+tel);
 
     $.ajax({
-        url:"?view=signUp",
-        type:"GET",
-        data:{numero:tipoUsuario},
+        url:"core/controller/contactController.php",
+        type:'POST',
+        data:{correo:email,tel:tel},
         success:function(data){
-
-          window.location="?view=signUp";
+            alert(data);
         }
     });
 
-});*/
-
-
-//$(document).on('click','#imgPerson',function(){
-
-  //  alert();
-
-
-   /*var tipoUsuario=1;
-
-    $.ajax({
-        url="overAll/signUpTopNav.php",
-        type="POST",
-        data:{tipoUsuario:tipoUsuario},
-        success:function(data){
-          window.location="?view=signUp";
-        }
-    });
-*/
-//});
+   //$("#secondLog").children().removeAttr('disabled');
+});
