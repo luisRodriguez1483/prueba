@@ -25,5 +25,32 @@ class ModelUser extends Connection{
         }
 
     }
+
+    public function contactLog($email,$tel){
+        $query = "SELECT * FROM contacto WHERE correo='".$email."'";
+        $result = mysqli_query($this->getConnection(),$query) or die ("ERROR ".mysqli_error($this->getConnection()));
+        if(mysqli_num_rows($result)!=0){
+            echo "este correo esta registrado";
+        }else{
+
+            $query2 = "SELECT * FROM contacto WHERE tel_cel='".$tel."'";
+            $result2= mysqli_query($this->getConnection(),$query2) or die ("ERROR ".mysqli_error($this->getConnection()));
+
+            if(mysqli_num_rows($result2)!=0){
+                echo 'Este telefono esta registrado';
+            }else{
+                $insert = "INSERT INTO contacto VALUES(null,'".$email."','".$tel."')";
+                mysqli_query($this->getConnection(),$insert) or die ("ERROR INSERT".mysqli_error($this->getConnection()));
+                echo "registrado";
+            }
+
+
+
+        }
+
+
+    }
+
+
 }
 ?>
