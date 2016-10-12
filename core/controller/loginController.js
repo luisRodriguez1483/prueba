@@ -34,9 +34,6 @@ function login(){
                     $('#txtUserLogin').focus();
                     $('#txtUserLogin').val("");
                     $('#txtUserLogin').css('border-color','#ed0c0c');
-                    if(user.length!=0){
-                        $('#loginError').fadeOut();
-                    }
                 }else if(msg == 3){
                     $('#loginError').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Contraseña incorrecta!</strong> <a href='#' class='alert-link'>Intenta de nuevo.</a></div>");
                     $('#txtPasswordLogin').focus();
