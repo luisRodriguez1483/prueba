@@ -87,7 +87,9 @@ include ('view/overAll/signUpTopNav.php');
                              <div class="">
                 <div role="form">
                    <div class="form-group">
+                        <div id="infoErrorContacto">
 
+                        </div>
                         <input type="text" class="form-control" id="txtMail" placeholder="Correo">
                         <input type="text" class="form-control" id="txtRepMail" placeholder="Repite tu correo">
                         <input type="tel" class="form-control" id="txtNumTel" placeholder="Celular">
@@ -106,6 +108,9 @@ include ('view/overAll/signUpTopNav.php');
                     <div class="col-xs-12 col-lg-4" >
                        <div class="mbr-testimonial card mbr-testimonial-lg" >
                         <div class="card-block" id="secondLog">
+                           <div id="infoErrorDireccion">
+
+                           </div>
                             <input type="text" class="form-control" id="txtState" placeholder="Estado" >
                             <input type="text" class="form-control" id="txtColonia" placeholder="Colonia">
                             <input type="text" class="form-control" id="txtCalle" placeholder="Calle">
@@ -113,7 +118,7 @@ include ('view/overAll/signUpTopNav.php');
                             <input type="text" class="form-control" id="txtNumExt" placeholder="Numero exterior">
                         </div>
                         <div class="mbr-author card-footer">
-                            <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformaciónPersonal"></div>
+                            <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformaciónPersonal" id="secondLogBtn"></div>
 
 
                         </div>
@@ -123,6 +128,7 @@ include ('view/overAll/signUpTopNav.php');
 
                     <div class="mbr-testimonial card mbr-testimonial-lg">
                         <div class="card-block" id="lastLog">
+                            <form>
                              <input type="text" class="form-control" id="txtUserReg" placeholder="Usuario">
                              <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña">
                              <input type="password" class="form-control" id="txtRepPassword" placeholder="Repite tu contraseña">
@@ -152,6 +158,7 @@ include ('view/overAll/signUpTopNav.php');
                             <?php
                               }
                             ?>
+                            </form>
                         </div>
                         <div class="mbr-author card-footer">
                             <div class="mbr-author-img"><img src="assets/images/face2.jpg" class="img-circle" alt="GuardarInformaciónContacto"></div>
