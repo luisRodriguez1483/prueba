@@ -1,6 +1,6 @@
 <?php
 require_once '../core.php';
-
+session_start();
 class Connection{
 
     private $connection;
