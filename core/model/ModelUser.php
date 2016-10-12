@@ -60,7 +60,6 @@ class ModelUser extends Connection{
 
     }
 
-<<<<<<< HEAD
     public function adressSignup($state,$colony,$street,$interiorNum,$exteriorNum)[
         $dato1=mysqli_real_escape_string($state);
         $dato2=mysqli_real_escape_string($colony);
@@ -71,7 +70,6 @@ class ModelUser extends Connection{
     ]
 
 
-=======
->>>>>>> origin/master
+
 }
 ?>
