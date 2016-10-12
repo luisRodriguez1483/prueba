@@ -34,27 +34,33 @@ class ModelUser extends Connection{
         $query = "SELECT * FROM contacto WHERE correo='".$email."'";
         $result = mysqli_query($this->getConnection(),$query) or die ("ERROR ".mysqli_error($this->getConnection()));
         if(mysqli_num_rows($result)!=0){
-            echo "este correo esta registrado";
+            echo 1;
         }else{
 
             $query2 = "SELECT * FROM contacto WHERE tel_cel='".$tel."'";
             $result2= mysqli_query($this->getConnection(),$query2) or die ("ERROR ".mysqli_error($this->getConnection()));
 
             if(mysqli_num_rows($result2)!=0){
-                echo 'Este telefono esta registrado';
+                echo 2;
             }else{
                 $insert = "INSERT INTO contacto VALUES(null,'".$email."','".$tel."')";
                 mysqli_query($this->getConnection(),$insert) or die ("ERROR INSERT".mysqli_error($this->getConnection()));
-                echo "registrado";
+                echo 3;
             }
-
-
 
         }
 
+    }
+
+    public function addressLog($estado,$col,$calle,$numInt,$numExt){
+        $query = "INSERT INTO direccion VALUES(null,'".$estado."','".$col."','".$calle."','".$numInt."','".$numExt."')";
+        mysqli_query($this->getConnection(),$query) or die ("ERROR ".mysqli_error($this->getConnection()));
+
+        echo 1;
 
     }
 
+<<<<<<< HEAD
     public function adressSignup($state,$colony,$street,$interiorNum,$exteriorNum)[
         $dato1=mysqli_real_escape_string($state);
         $dato2=mysqli_real_escape_string($colony);
@@ -65,5 +71,7 @@ class ModelUser extends Connection{
     ]
 
 
+=======
+>>>>>>> origin/master
 }
 ?>
