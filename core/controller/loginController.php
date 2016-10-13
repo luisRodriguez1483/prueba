@@ -7,6 +7,7 @@
     $objUser = new ModelUser();
     $objUser->userLogin($user,$password);
     }else{
+        session_start();
         include ('view/loggedIn.php');
     }
 ?>
