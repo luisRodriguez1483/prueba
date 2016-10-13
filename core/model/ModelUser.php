@@ -18,7 +18,6 @@ class ModelUser extends Connection{
             $passResult = $row2["contrasenia"];
             if($pass == $passResult){
                 echo 1;
-                session_start();
                 $_SESSION["session_user"]=$row["nom_usuario"];
 
             }else{
