@@ -60,16 +60,52 @@ class ModelUser extends Connection{
 
     }
 
-    public function adressSignup($state,$colony,$street,$interiorNum,$exteriorNum){
-        $dato1=mysqli_real_escape_string($state);
-        $dato2=mysqli_real_escape_string($colony);
-        $dato3=mysqli_real_escape_string($street);
-        $dato4=mysqli_real_escape_string($interiorNum);
-        $dato5=mysqli_real_escape_string($exteriorNum);
-        $query="INSERT INTO direccion VALUES(null, '".$dato1."','".$dato2."','".$dato3."','".$dato4."','".$dato5."')";
-        echo 1;
+
+
+    public function userLog($user,$password){
+        $query = "SELECT * FROM usuario WHERE nom_usuario='".$user."'";
+        $rs = mysqli_query($this->getConnection(),$query) or die ("ERROR ".mysqli_error($this->getConnection()));
+
+        if(mysqli_num_rows($rs)!=0){
+            echo 'Este usuario ya esta registrado';
+        }else{
+            $query2 = "SELECT MAX(idDireccion) as idDir FROM direccion";
+            $rs2 = mysqli_query($this->getConnection(),$query2) or die ("ERROR ".mysqli_error($this->getConnection()));
+            $row1 = mysqli_fetch_array($rs2);
+            $idDir = $row1['idDir'];
+
+            $query3 = "SELECT MAX(idContacto) as idCon FROM contacto";
+            $rs3 = mysqli_query($this->getConnection(),$query3);
+            $row2 = mysqli_fetch_array($rs3);
+
+            $idContact = $row2['idCon'];
+
+
+            $query4 = "INSERT INTO usuario VALUES(null,'".$user."','".$password."',".$idDir.",".$idContact.")";
+            mysqli_query($this->getConnection(),$query4) or die ("ERROR ".mysqli_error($this->getConnection()));
+
+            echo 'Registrado con exito';
+
+        }
+    }
+    public function companyLog($nameCompany,$giro,$rfc){
+        $query = "SELECT MAX(idUsuario) as idUsu FROM usuario";
+        $rs = mysqli_query($this->getConnection(),$query) or die("ERROR ".mysqli_error($this->getConnection()));
+        $row = mysqli_fetch_array($rs);
+
+        $idUsu = $row['idUsu'];
+
+        $queryInsert = "INSERT INTO empresa VALUES(null,".$idUsu.",'".$nameCompany."','".$giro."','".$rfc."')";
+        mysqli_query($this->getConnection(),$queryInsert) or die ("ERROR ".mysqli_error($this->getConnection()));
+
+
+
+
     }
 
+    public function personLog(){
+
+    }
 
 
 }
