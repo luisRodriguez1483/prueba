@@ -7,4 +7,5 @@ define("HOST", 'localhost');
 define("USER", 'root');
 define("PASSWORD", 'root');
 define("DATABASE",'socialNetWorkv2');
+define("INDEX",'http://localhost/SocialNetWorkV4/core/controller/indexController.php');
 ?>
