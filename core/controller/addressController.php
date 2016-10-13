@@ -8,7 +8,7 @@ $numeroInt = $_POST['numInte'];
 $numeroExt = $_POST['numExt'];
 
 $objD = new ModelUser();
-$objD->addressSignup($estado,$colonia,$calle,$numeroInt,$numeroExt);
+$objD->addressLog($estado,$colonia,$calle,$numeroInt,$numeroExt);
 
 
 ?>

@@ -128,40 +128,44 @@ include ('view/overAll/signUpTopNav.php');
 
                     <div class="mbr-testimonial card mbr-testimonial-lg">
                         <div class="card-block" id="lastLog">
-                            <form>
+                            <?php
+                            $type = $_GET['type'];
+                            ?>
                              <input type="text" class="form-control" id="txtUserReg" placeholder="Usuario">
                              <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña">
                              <input type="password" class="form-control" id="txtRepPassword" placeholder="Repite tu contraseña">
+                               <input type="hidden" value="<?php echo $type?>" id="type">
 
                             <?php
-                            $type = $_GET['type'];
                               if($type == 1){
-
-
                              ?>
-                             <input type="text" class="form-control" id="txtGiro" placeholder="Giro">
-                             <input type="text" class="form-control" id="txtRFC" placeholder="RFC">
-
+                             <form id="formCompany" method="post" action="#">
+                             <input type="text" class="form-control" name="nombreEmpresa" id="nombreEmpresa" placeholder="Nombre de tu empresa">
+                             <input type="text" class="form-control" name="giroEmpresa" id="giroEmpresa" placeholder="Giro">
+                             <input type="text" class="form-control" name="rfcEmpresa" id="rfcEmpresa" placeholder="RFC">
+                            </form>
                              <?php
                               }else{
                             ?>
-                            <input type="text" class="form-control" id="txtNombrePer" placeholder="Nombre">
-                            <input type="text" class="form-control" id="txtApePat" placeholder="Apellido Paterno">
-                            <input type="text" class="form-control" id="txtApeMat" placeholder="Apellido Materno">
-                            <input type="text" class="form-control" id="txtCurp" placeholder="CURP">
-                            <input type="text" class="form-control" id="txtFechaNac" placeholder="Fecha Nacimiento">
-                            Sexo: <select>
+                            <form id="formPerson">
+                            <input type="text" class="form-control" name="nombrePersona"id="txtNombrePer" placeholder="Nombre">
+                            <input type="text" class="form-control" name="apePat" id="txtApePat" placeholder="Apellido Paterno">
+                            <input type="text" class="form-control" name="apeMat" id="txtApeMat" placeholder="Apellido Materno">
+                            <input type="text" class="form-control" name="CURP" id="txtCurp" placeholder="CURP">
+                            <input type="text" class="form-control" name="FechaNac" id="txtFechaNac" placeholder="Fecha Nacimiento">
+                            Sexo: <select id="cmbSexo" name="sexo">
                                 <option value="0" class="form-control">Elija una opcion</option>
                                 <option>Maculino</option>
                                 <option>Femenino</option>
                             </select>
+                            </form>
                             <?php
                               }
                             ?>
-                            </form>
+
                         </div>
                         <div class="mbr-author card-footer">
-                            <div class="mbr-author-img"><img src="assets/images/face2.jpg" class="img-circle" alt="GuardarInformaciónContacto"></div>
+                            <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformaciónContacto" id="lastLogBtn"></div>
 
 
                         </div>
