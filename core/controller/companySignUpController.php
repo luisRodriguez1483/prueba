@@ -5,6 +5,6 @@ $giro = $_POST['giroEmpresa'];
 $rfc = $_POST['rfcEmpresa'];
 
 $objE = new ModelUser();
-$objE->companyLog($nombreEmpresa,$giro,$rfc);
+$objE->companySignUp($nombreEmpresa,$giro,$rfc);
 
 ?>

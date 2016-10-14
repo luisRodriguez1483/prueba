@@ -179,7 +179,7 @@ include ('view/overAll/signUpTopNav.php');
     </div>
 
 </section>
-<script type="text/javascript" src="../core/controller/userLogController.js"></script>
+<script type="text/javascript" src="../core/controller/userSignUpController.js"></script>
 <?php
 include ('view/overAll/footer.php');
 ?>

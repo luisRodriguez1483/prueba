@@ -5,7 +5,7 @@ include ('../model/ModelUser.php');
     $tel = $_POST['tel'];
 
     $objContact = new ModelUser();
-    $objContact->contactLog($correo,$tel);
+    $objContact->contactSignUp($correo,$tel);
 
 
 
