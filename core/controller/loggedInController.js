@@ -7,8 +7,9 @@ $(document).on('click','#closeSession',function(){
         type: "POST",
         data:{action:flag},
         success: function(msg){
-            alert(msg);
-            window.location="?view=logout";
+            if(msg==1){
+                window.location.reload();
+            }
         }
     });
 });

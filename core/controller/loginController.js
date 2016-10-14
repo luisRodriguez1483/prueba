@@ -27,7 +27,9 @@ function login(){
                 pass:password
             },
             success: function(msg){
+                alert(msg);
                 if(msg == 1){
+                    $('#modalLogin').fadeOut();
                     window.location="?view=login";
                 }else if(msg == 2){
                     $('#loginError').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Usuario incorrecto!</strong> <a href='#' class='alert-link'>Intenta de nuevo.</a></div>");

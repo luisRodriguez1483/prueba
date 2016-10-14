@@ -8,6 +8,10 @@
     $objUser->userLogin($user,$password);
     }else{
         session_start();
-        include ('view/loggedIn.php');
+        if(!isset($_SESSION["session_user"])){
+            header("Location:index.php");
+        }else{
+                include ('view/loggedIn.php');
+        }
     }
 ?>

@@ -8,18 +8,28 @@ class ModelUser extends Connection{
         $pass=$this->getConnection()->real_escape_string($password);
 
         $query="select nom_usuario from usuario where nom_usuario = '".$userName."' ";
-        $result=mysqli_query($this->getConnection(),$query) or die("ERROR ".mysqli_error($this->getConnection()));
-        $row = mysqli_fetch_array($result);
+        $executeQuery=mysqli_query($this->getConnection(),$query) or die("ERROR ".mysqli_error($this->getConnection()));
+        $row = mysqli_fetch_array($executeQuery);
         $userResult=$row["nom_usuario"];
         if($userResult == $userName){
             $query2 = "select contrasenia from usuario where contrasenia = '".$pass."' and nom_usuario = '".$userName."' ";
-            $result2 = mysqli_query($this->getConnection(),$query2) or die ("ERROR ".mysqli_error($this->getConnection()));
-            $row2 = mysqli_fetch_array($result2);
+            $executeQuery2 = mysqli_query($this->getConnection(),$query2) or die ("ERROR ".mysqli_error($this->getConnection()));
+            $row2 = mysqli_fetch_array($executeQuery2);
             $passResult = $row2["contrasenia"];
             if($pass == $passResult){
-                echo 1;
+                //$query3="SELECT idUsuario FROM usuario WHERE nom_usuario= '".$userResult."' AND idUsuario in(SELECT idUsuario FROM empresa)"
+                //verif. empresa o persona
+                $query3="SELECT usuario.idUsuario FROM usuario INNER JOIN empresa on usuario.idUsuario=empresa.idUsuario"
+                    ." WHERE usuario.nom_usuario='".$userResult."' ";
+                $executeQuery3=mysqli_query($this->getConnection(),$query3) or die ("Error in query 3 ".mysqli_error($this->getConnection()));
+                    if(mysqli_num_rows($executeQuery3) != 0){
+                        //empresa
+                     echo 1;
+                    }else{
+                        //persona
+                        echo 11;
+                    }
                 $_SESSION["session_user"]=$row["nom_usuario"];
-
             }else{
                 echo 3;
             }

@@ -9,6 +9,5 @@ if(isset($_POST["action"])){
     }
 }else{
     include ('view/index/index.php');
-    exit;
 }
 ?>

@@ -14,7 +14,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                <h3>¡Bienvenido!</h3>
+                <h3 style="text-align:center;">¡Bienvenido!</h3>
             </div>
             <div id="loginError" style="text-align:center;">
 
