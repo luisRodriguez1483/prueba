@@ -2,13 +2,14 @@
 <html>
 <?php
 include ('view/overAll/header.php');
-
-
 ?>
+
 <body>
+
 <?php
 include ('view/overAll/signUpTopNav.php');
 ?>
+
 
 <section class="engine"></section><section class="mbr-cards mbr-section mbr-section-nopadding mbr-after-navbar" id="page1-features4-0" style="background-color: rgb(255, 255, 255);">
 
