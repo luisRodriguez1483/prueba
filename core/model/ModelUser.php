@@ -41,7 +41,7 @@ class ModelUser extends Connection{
 
     }
 
-    public function contactLog($email,$tel){
+    public function contactSignUp($email,$tel){
         $query = "SELECT * FROM contacto WHERE correo='".$email."'";
         $result = mysqli_query($this->getConnection(),$query) or die ("ERROR ".mysqli_error($this->getConnection()));
         if(mysqli_num_rows($result)!=0){
@@ -63,7 +63,7 @@ class ModelUser extends Connection{
 
     }
 
-    public function addressLog($estado,$col,$calle,$numInt,$numExt){
+    public function addressSignUp($estado,$col,$calle,$numInt,$numExt){
         $query = "INSERT INTO direccion VALUES(null,'".$estado."','".$col."','".$calle."','".$numInt."','".$numExt."')";
         mysqli_query($this->getConnection(),$query) or die ("ERROR ".mysqli_error($this->getConnection()));
 
@@ -73,7 +73,7 @@ class ModelUser extends Connection{
 
 
 
-    public function userLog($user,$password){
+    public function userSignUp($user,$password){
         $query = "SELECT * FROM usuario WHERE nom_usuario='".$user."'";
         $rs = mysqli_query($this->getConnection(),$query) or die ("ERROR ".mysqli_error($this->getConnection()));
 
@@ -99,7 +99,7 @@ class ModelUser extends Connection{
 
         }
     }
-    public function companyLog($nameCompany,$giro,$rfc){
+    public function companySignUp($nameCompany,$giro,$rfc){
         $query = "SELECT MAX(idUsuario) as idUsu FROM usuario";
         $rs = mysqli_query($this->getConnection(),$query) or die("ERROR ".mysqli_error($this->getConnection()));
         $row = mysqli_fetch_array($rs);

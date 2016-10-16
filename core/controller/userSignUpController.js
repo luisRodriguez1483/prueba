@@ -10,13 +10,10 @@ $(document).on('click','#fistLog',function(){
     var email = $('#txtMail').val();
     var repEmail = $('#txtRepMail').val();
     var tel = $('#txtNumTel').val();
-
-
     //alert(email+" "+repEmail+" "+tel);
 
-
     $.ajax({
-        url:"core/controller/contactController.php",
+        url:"core/controller/contactSignUpController.php",
         type:'POST',
         data:{correo:email,tel:tel},
         success:function(data){
@@ -53,7 +50,7 @@ $(document).on('click','#secondLogBtn',function(){
 
     /*Pendiente poner datos que faltan*/
     $.ajax({
-     url:"core/controller/addressController.php",
+     url:"core/controller/addressSignUpController.php",
         type:"POST",
         data:{estado:estado,
               colonia:colonia,
@@ -79,7 +76,7 @@ $(document).on('click','#lastLogBtn',function(){
     //alert(user+" "+password+" "+repPassword+" "+type);
 
     $.ajax({
-        url:"core/controller/userLogController.php",
+        url:"core/controller/userSignUpController.php",
         type:'POST',
         data:{
             user:user,
@@ -99,7 +96,7 @@ $(document).on('click','#lastLogBtn',function(){
         var rfc = $().val;*/
 
        $.ajax({
-           url:'core/controller/companyLogController.php',
+           url:'core/controller/companySignUpController.php',
            type:'POST',
            data:{
                datosEmpresa:datosEmpresa
