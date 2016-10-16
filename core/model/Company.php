@@ -2,7 +2,7 @@
 include ("Connection.php");
 class Company extends Connection{
 
-   public function companySignUp($nameCompany,$giro,$rfc){
+    public function companySignUp($nameCompany,$giro,$rfc){
         $query = "SELECT MAX(idUsuario) as idUsu FROM usuario";
         $rs = mysqli_query($this->getConnection(),$query) or die("ERROR ".mysqli_error($this->getConnection()));
         $row = mysqli_fetch_array($rs);
@@ -16,6 +16,5 @@ class Company extends Connection{
 
 
     }
-}
 
 ?>
