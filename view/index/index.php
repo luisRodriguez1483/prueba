@@ -22,7 +22,10 @@
             <div class="modal-body">
                 <div role="form" onkeypress="enterLogin(event)">
                    <div class="form-group">
-                        <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogin" placeholder="Usuario">
+                       <span class="input-group-adon">
+                            <span class="glyphicons glyphicons-user"></span>
+                       </span>
+                       <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogin" placeholder="Usuario">
                         <input type="password" class="form-control" name="txtPasswordLogIn" id="txtPasswordLogin" placeholder="Contraseña">
                     </div>
                </div>

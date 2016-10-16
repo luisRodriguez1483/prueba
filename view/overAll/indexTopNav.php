@@ -22,7 +22,7 @@
                     <!--<li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="#">Iniciar Sesión</a></li></ul>--->
                     <li class="nav-item nav-btn"><a data-toggle="modal" class="nav-link btn btn-white btn-white-outline" href="#modalLogIn">Iniciar Sesión</a></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="close-icon"></div>
+                        <div class="close-icon">x</div>
                     </button>
 
                 </div>

@@ -19,11 +19,12 @@ include('view/overAll/loggedInTopNav.php');
             <div class="container">
                 <div class="card cart-block">
                     
-                    <div class="card-block">
+                    <div class="card-block" style="text-align:left;">
                         <h4 class="card-title">Mi panel de control</h4>
                         <h6 class="card-primary-outline"> <?php echo "Hola ".$_SESSION["session_user"]; ?> </h6>
-                        <p class="card-text"><br><br><br><br><br><br><br><br><br><br><br><br><br>Bootstrap 4 has been noted as one of the most reliable and proven frameworks and Mobirise has been equipped to develop websites using this framework.</p>
-                        
+                            <div id="panelContent" class="btn-group-vertical" style="text-align:left;">
+
+                            </div>
                     </div>
                 </div>
             </div>

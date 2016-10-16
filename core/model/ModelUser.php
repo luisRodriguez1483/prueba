@@ -4,8 +4,8 @@ class ModelUser extends Connection{
 
 
     public function userLogin($user,$password){
-        $userName=$this->getConnection()->real_escape_string($user);
-        $pass=$this->getConnection()->real_escape_string($password);
+        $userName=mysqli_real_escape_string($this->getConnection(),$user);
+        $pass=mysqli_real_escape_string($this->getConnection(),$password);
 
         $query="select nom_usuario from usuario where nom_usuario = '".$userName."' ";
         $executeQuery=mysqli_query($this->getConnection(),$query) or die("ERROR ".mysqli_error($this->getConnection()));
@@ -17,23 +17,25 @@ class ModelUser extends Connection{
             $row2 = mysqli_fetch_array($executeQuery2);
             $passResult = $row2["contrasenia"];
             if($pass == $passResult){
-                //$query3="SELECT idUsuario FROM usuario WHERE nom_usuario= '".$userResult."' AND idUsuario in(SELECT idUsuario FROM empresa)"
-                //verif. empresa o persona
-                $query3="SELECT usuario.idUsuario FROM usuario INNER JOIN empresa on usuario.idUsuario=empresa.idUsuario"
-                    ." WHERE usuario.nom_usuario='".$userResult."' ";
-                $executeQuery3=mysqli_query($this->getConnection(),$query3) or die ("Error in query 3 ".mysqli_error($this->getConnection()));
-                    if(mysqli_num_rows($executeQuery3) != 0){
-                        //empresa
-                     echo 1;
-                    }else{
-                        //persona
-                        echo 11;
-                    }
-                $_SESSION["session_user"]=$row["nom_usuario"];
-            }else{
-                echo 3;
+                    echo 1;
+                    $_SESSION["session_user"]=$row["nom_usuario"];
+                }else{
+                    echo 3;
+                }
+            }else {
+                echo 2;
             }
-        }else {
+        }
+
+    public function userType(){
+        $query="SELECT usuario.idUsuario FROM usuario INNER JOIN empresa on usuario.idUsuario=empresa.idUsuario"
+        ." WHERE usuario.nom_usuario= '".$_SESSION['session_user']."' ";
+        $executeQuery=mysqli_query($this->getConnection(),$query) or die ("Error in query type ".mysqli_error($this->getConnection()));
+        if(mysqli_num_rows($executeQuery)!=0){
+            //empresa
+            echo 1;
+        }else{
+            //persona
             echo 2;
         }
 

@@ -27,7 +27,6 @@ function login(){
                 pass:password
             },
             success: function(msg){
-                alert(msg);
                 if(msg == 1){
                     $('#modalLogin').fadeOut();
                     window.location="?view=login";
