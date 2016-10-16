@@ -1,6 +1,6 @@
 <?php
 include ("Connection.php");
-class ModelUser extends Connection{
+class User extends Connection{
 
 
     public function userLogin($user,$password){
@@ -40,38 +40,6 @@ class ModelUser extends Connection{
         }
 
     }
-
-    public function contactSignUp($email,$tel){
-        $query = "SELECT * FROM contacto WHERE correo='".$email."'";
-        $result = mysqli_query($this->getConnection(),$query) or die ("ERROR ".mysqli_error($this->getConnection()));
-        if(mysqli_num_rows($result)!=0){
-            echo 1;
-        }else{
-
-            $query2 = "SELECT * FROM contacto WHERE tel_cel='".$tel."'";
-            $result2= mysqli_query($this->getConnection(),$query2) or die ("ERROR ".mysqli_error($this->getConnection()));
-
-            if(mysqli_num_rows($result2)!=0){
-                echo 2;
-            }else{
-                $insert = "INSERT INTO contacto VALUES(null,'".$email."','".$tel."')";
-                mysqli_query($this->getConnection(),$insert) or die ("ERROR INSERT".mysqli_error($this->getConnection()));
-                echo 3;
-            }
-
-        }
-
-    }
-
-    public function addressSignUp($estado,$col,$calle,$numInt,$numExt){
-        $query = "INSERT INTO direccion VALUES(null,'".$estado."','".$col."','".$calle."','".$numInt."','".$numExt."')";
-        mysqli_query($this->getConnection(),$query) or die ("ERROR ".mysqli_error($this->getConnection()));
-
-        echo 1;
-
-    }
-
-
 
     public function userSignUp($user,$password){
         $query = "SELECT * FROM usuario WHERE nom_usuario='".$user."'";

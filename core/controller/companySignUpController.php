@@ -1,10 +1,10 @@
 <?php
-include('../model/ModelUser.php');
+include('../model/Company.php');
 $nombreEmpresa = $_POST['nombreEmpresa'];
 $giro = $_POST['giroEmpresa'];
 $rfc = $_POST['rfcEmpresa'];
 
-$objE = new ModelUser();
+$objE = new Company();
 $objE->companySignUp($nombreEmpresa,$giro,$rfc);
 
 ?>

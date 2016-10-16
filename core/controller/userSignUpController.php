@@ -1,8 +1,8 @@
 <?php
-include('../model/ModelUser.php');
+include('../model/User.php');
 $user = $_POST['user'];
 $password = $_POST['password'];
 
-$objU = new ModelUser();
+$objU = new User();
 $objU->addressSignUp($user,$password);
 ?>
