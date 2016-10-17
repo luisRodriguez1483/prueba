@@ -141,32 +141,9 @@
     </div>
 </section>
 
-<section class="mbr-section mbr-section-md-padding mbr-footer footer1" id="index-contacts1-0" style="background-color: rgb(46, 46, 46); padding-top: 90px; padding-bottom: 90px;">
 
-    <div class="container">
-        <div class="row">
-            <div class="mbr-footer-content col-xs-12 col-md-3">
-                <div><img src="assets/images/sn-128x91-85.png"></div>
-            </div>
-            <div class="mbr-footer-content col-xs-12 col-md-3">
-                <p><strong>Address</strong><br>
-1234 Street Name<br>
-City, AA 99999</p>
-            </div>
-            <div class="mbr-footer-content col-xs-12 col-md-3">
-                <p><strong>Contacts</strong><br>
-Email: support@snk.com<br>
-Phone: +1 (0) 000 0000 001<br>
-Fax: +1 (0) 000 0000 002</p>
-            </div>
-            <div class="mbr-footer-content col-xs-12 col-md-3">
-                <p>Términos y condiciones<br><br>Aviso de privacidad</p>
-            </div>
-
-        </div>
-    </div>
-</section>
 <?php
+include("view/overAll/indexFooter.php");
 include ('view/overAll/footer.php');
 ?>
 </body>
