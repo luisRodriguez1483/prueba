@@ -46,7 +46,7 @@ class User extends Connection{
         $rs = mysqli_query($this->getConnection(),$query) or die ("ERROR ".mysqli_error($this->getConnection()));
 
         if(mysqli_num_rows($rs)!=0){
-            echo 'Este usuario ya esta registrado';
+            echo 1;
         }else{
             $query2 = "SELECT MAX(idDireccion) as idDir FROM direccion";
             $rs2 = mysqli_query($this->getConnection(),$query2) or die ("ERROR ".mysqli_error($this->getConnection()));
@@ -63,14 +63,12 @@ class User extends Connection{
             $query4 = "INSERT INTO usuario VALUES(null,'".$user."','".$password."',".$idDir.",".$idContact.")";
             mysqli_query($this->getConnection(),$query4) or die ("ERROR ".mysqli_error($this->getConnection()));
 
-            echo 'Registrado con exito';
+            echo 2;
 
         }
     }
 
-    public function personLog(){
 
-    }
 
 
 }

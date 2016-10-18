@@ -126,25 +126,61 @@ include ('view/overAll/signUpTopNav.php');
                         </div>
                     </div>
                 </div>
+
+
+
+
+                   <div class="col-xs-12 col-lg-4">
+
+                    <div class="mbr-testimonial card ">
+                        <div class="card-block">
+                             <div class="">
+                <div role="form">
+                   <div class="form-group" id="divPrimeraParte">
+                        <div id="">
+
+                        </div>
+                                      <input type="text" class="form-control" id="txtUserReg" placeholder="Usuario">
+                             <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña">
+                             <input type="password" class="form-control" id="txtRepPassword" placeholder="Repite tu contraseña">
+
+                    </div>
+               </div>
+            </div>
+                        </div>
+                        <div class="mbr-author card-footer">
+                            <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformacionUsuario" id=""></div>
+
+
+                        </div>
+                    </div>
+                </div>
+
                     <div class="col-xs-12 col-lg-4">
 
                     <div class="mbr-testimonial card mbr-testimonial-lg">
                         <div class="card-block" id="lastLog">
+                           <div id="infoErrorUsuario">
+
+                           </div>
                             <?php
                             $type = $_GET['type'];
                             ?>
-                             <input type="text" class="form-control" id="txtUserReg" placeholder="Usuario">
-                             <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña">
-                             <input type="password" class="form-control" id="txtRepPassword" placeholder="Repite tu contraseña">
                                <input type="hidden" value="<?php echo $type?>" id="type">
-
                             <?php
                               if($type == 1){
                              ?>
 
                              <input type="text" class="form-control" name="nombreEmpresa" id="nombreEmpresa" placeholder="Nombre de tu empresa">
                              <input type="text" class="form-control" name="giroEmpresa" id="giroEmpresa" placeholder="Giro">
-                             <input type="text" class="form-control" name="rfcEmpresa" id="rfcEmpresa" placeholder="RFC">
+            Tipo de persona: <select id="cmbTipoPersona">
+                                <option value="0">Seleccione una opcion</option>
+                                 <option value="1">Fisica</option>
+                                 <option value="2">Moral</option>
+                             </select>
+                             <div id="typePersonRFCDiv">
+
+                             </div>
                             </form>
                              <?php
                               }else{

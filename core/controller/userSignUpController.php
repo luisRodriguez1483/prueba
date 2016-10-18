@@ -4,5 +4,5 @@ $user = $_POST['user'];
 $password = $_POST['password'];
 
 $objU = new User();
-$objU->addressSignUp($user,$password);
+$objU->userSignUp($user,$password);
 ?>
