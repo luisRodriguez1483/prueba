@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="assets/loader/style.css">
 
   <script type="text/javascript" src="view/libs/js/jquery.js"></script>
+  <script type="text/javascript" src="view/libs/js/jquery.numeric.js"></script>
   <script type="text/javascript" src="core/controller/userSignUpController.js"></script>
 
   <title><?php echo APP_TITLE ?></title>
