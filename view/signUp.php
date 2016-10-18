@@ -87,13 +87,13 @@ include ('view/overAll/signUpTopNav.php');
                         <div class="card-block">
                              <div class="">
                 <div role="form">
-                   <div class="form-group">
+                   <div class="form-group" id="divPrimeraParte">
                         <div id="infoErrorContacto">
 
                         </div>
                         <input type="text" class="form-control" id="txtMail" placeholder="Correo">
                         <input type="text" class="form-control" id="txtRepMail" placeholder="Repite tu correo">
-                        <input type="tel" class="form-control" id="txtNumTel" placeholder="Celular">
+                        <input type="tel" maxlength="10" class="form-control" id="txtNumTel" placeholder="Celular o telefono">
                     </div>
                </div>
 
@@ -113,6 +113,7 @@ include ('view/overAll/signUpTopNav.php');
 
                            </div>
                             <input type="text" class="form-control" id="txtState" placeholder="Estado" >
+                            <input type="text" class="form-control" id="txtMunicipio" placeholder="Municipio">
                             <input type="text" class="form-control" id="txtColonia" placeholder="Colonia">
                             <input type="text" class="form-control" id="txtCalle" placeholder="Calle">
                             <input type="text" class="form-control" id="txtNumInt" placeholder="Numero interior">
@@ -140,7 +141,7 @@ include ('view/overAll/signUpTopNav.php');
                             <?php
                               if($type == 1){
                              ?>
-                             <form id="formCompany" method="post" action="#">
+
                              <input type="text" class="form-control" name="nombreEmpresa" id="nombreEmpresa" placeholder="Nombre de tu empresa">
                              <input type="text" class="form-control" name="giroEmpresa" id="giroEmpresa" placeholder="Giro">
                              <input type="text" class="form-control" name="rfcEmpresa" id="rfcEmpresa" placeholder="RFC">
@@ -148,7 +149,7 @@ include ('view/overAll/signUpTopNav.php');
                              <?php
                               }else{
                             ?>
-                            <form id="formPerson">
+
                             <input type="text" class="form-control" name="nombrePersona"id="txtNombrePer" placeholder="Nombre">
                             <input type="text" class="form-control" name="apePat" id="txtApePat" placeholder="Apellido Paterno">
                             <input type="text" class="form-control" name="apeMat" id="txtApeMat" placeholder="Apellido Materno">
@@ -159,7 +160,7 @@ include ('view/overAll/signUpTopNav.php');
                                 <option>Maculino</option>
                                 <option>Femenino</option>
                             </select>
-                            </form>
+
                             <?php
                               }
                             ?>

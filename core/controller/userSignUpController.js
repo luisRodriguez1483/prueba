@@ -1,8 +1,8 @@
 $(document).ready(function(){
-
-
-   // $("#secondLog").children().attr("disabled","disabled");
+    //$("#secondLog").children().attr("disabled","disabled");
     //$("#lastLog").children().attr("disabled","disabled");
+    $('#txtNumTel').numeric();
+
 });
 
 $(document).on('click','#fistLog',function(){
@@ -12,16 +12,16 @@ $(document).on('click','#fistLog',function(){
     var tel = $('#txtNumTel').val();
     //alert(email+" "+repEmail+" "+tel);
 
-    if(email.length == 0){
+    if(email.length == 0 || $('#txtMail').val().trim() == ''){
          $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtMail').focus();
-        $('#txtMail').css('border-color','#ed0c0c')
+        $('#txtMail').css('border-color','#ed0c0c');
 
-    }else if(repEmail.length == 0){
+    }else if(repEmail.length == 0 || $('#txtRepMail').val().trim() == ''){
          $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtRepMail').focus();
-        $('#txtRepMail').css('border-color','#ed0c0c')
-    }else if(tel.length == 0){
+        $('#txtRepMail').css('border-color','#ed0c0c');
+    }else if(tel.length == 0 || $('#txtNumTel').val().trim() == ''){
 
          $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtNumTel').focus();
@@ -49,15 +49,7 @@ $(document).on('click','#fistLog',function(){
                 $('#txtMail').css('border-color','#ed0c0c');
                  $('#txtRepMail').css('border-color','#ed0c0c');
 
-    }else if(tel.length <=6 || tel.length >=11){
-
-        $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Numero telefonico incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que sea correcto.</a></div>");
-
-         $('#txtNumTel').focus();
-        $('#txtNumTel').css('border-color','#ed0c0c');
-
     }else{
-/*
     $.ajax({
         url:"core/controller/contactSignUpController.php",
         type:'POST',
@@ -81,29 +73,71 @@ $(document).on('click','#fistLog',function(){
                 $('#txtNumTel').css('border-color','#ed0c0c');
 
             }else if(data == 3){
-                alert("Registrado");
-                //$("#secondLog").children().removeAttr('disabled');
+                $("#secondLog").children().removeAttr('disabled');
+                $('#txtMail').val("");
+                $('#txtRepMail').val("");
+                $('#txtNumTel').val("");
+                $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Correcto!</strong> <a href='#' class='alert-link'>Tus datos han sido enviados correctamente</a></div>");
+                $("#divPrimeraParte").children().attr("disabled","disabled");
             }
         }
-    });*/
+    });
     }
 });
 
+
+/*Controla la segunda parte de el registro de usuarios direccion*/
 $(document).on('click','#secondLogBtn',function(){
 
     var estado = $('#txtState').val();
+    var municipio = $('#txtMunicipio').val();
     var colonia = $('#txtColonia').val();
     var calle = $('#txtCalle').val();
     var numInte = $('#txtNumInt').val();
     var numExt = $('#txtNumExt').val();
 
-    alert(estado+" "+colonia+" "+calle+" "+numInte+" "+numExt);
+    if(estado.length == 0 || $('#txtState').val().trim == ''){
 
-    /*Pendiente poner datos que faltan*/
+        $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtState').focus();
+        $('#txtState').css('border-color','#ed0c0c');
+
+    }else if(municipio.length == 0 || $('#txtMunicipio').val().trim() == ''){
+
+        $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtMunicipio').focus();
+        $('#txtMunicipio').css('border-color','#ed0c0c');
+
+    }else if(colonia.length == 0 || $('#txtColonia').val().trim() == ''){
+
+        $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtColonia').focus();
+        $('#txtColonia').css('border-color','#ed0c0c');
+
+    }else if(calle.length == 0 || $('#txtCalle').val().trim() == ''){
+
+         $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtCalle').focus();
+        $('#txtCalle').css('border-color','#ed0c0c');
+
+    }else if(numInte.length == 0 || $('#txtNumInt').val().trim() == ''){
+
+         $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtNumInt').focus();
+        $('#txtNumInt').css('border-color','#ed0c0c');
+
+    }else if(numExt.length == 0 || $('#txtNumExt').val().trim() == ''){
+
+        $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtNumExt').focus();
+        $('#txtNumExt').css('border-color','#ed0c0c');
+
+    }else{
     $.ajax({
      url:"core/controller/addressSignUpController.php",
         type:"POST",
         data:{estado:estado,
+              municipio:municipio,
               colonia:colonia,
               calle:calle,
               numInte:numInte,
@@ -111,21 +145,28 @@ $(document).on('click','#secondLogBtn',function(){
 
         success:function(data){
                 if(data == 1){
-                    alert("Registrado");
+    $('#txtState').val("");
+    $('#txtMunicipio').val("");
+    $('#txtColonia').val("");
+    $('#txtCalle').val("");
+    $('#txtNumInt').val("");
+    $('#txtNumExt').val("");
+                     $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Correcto!</strong> <a href='#' class='alert-link'>Tus datos han sido enviados correctamente</a></div>");
+                $("#secondLog").children().attr("disabled","disabled");
+
                 }
         }
     });
-
+    }
     });
+
+
 
 $(document).on('click','#lastLogBtn',function(){
     var user = $('#txtUserReg').val();
     var password = $('#txtPassword').val();
     var repPassword = $('#txtRepPassword').val();
     var type = $('#type').val();
-
-    //alert(user+" "+password+" "+repPassword+" "+type);
-
     $.ajax({
         url:"core/controller/userSignUpController.php",
         type:'POST',
@@ -134,7 +175,7 @@ $(document).on('click','#lastLogBtn',function(){
             password:password
         },
         success:function(data){
-           // alert(data);
+
         }
 
 
