@@ -12,6 +12,52 @@ $(document).on('click','#fistLog',function(){
     var tel = $('#txtNumTel').val();
     //alert(email+" "+repEmail+" "+tel);
 
+    if(email.length == 0){
+         $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtMail').focus();
+        $('#txtMail').css('border-color','#ed0c0c')
+
+    }else if(repEmail.length == 0){
+         $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtRepMail').focus();
+        $('#txtRepMail').css('border-color','#ed0c0c')
+    }else if(tel.length == 0){
+
+         $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtNumTel').focus();
+        $('#txtNumTel').css('border-color','#ed0c0c');
+
+    }else if(email.indexOf('@', 0) == -1 || email.indexOf('.', 0) == -1){
+
+        $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Correo incorrecto!</strong> <a href='#' class='alert-link'>Por favor, ingrese su correo nuevamente.</a></div>");
+            $('#txtMail').focus();
+        $('#txtMail').css('border-color','#ed0c0c');
+
+    }else if(repEmail.indexOf('@', 0) == -1 || repEmail.indexOf('.', 0) == -1){
+
+         $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Correo incorrecto!</strong> <a href='#' class='alert-link'>Por favor, ingrese su correo nuevamente.</a></div>");
+            $('#txtRepMail').focus();
+        $('#txtRepMail').css('border-color','#ed0c0c');
+
+    }else if(email!=repEmail || repEmail!=email){
+
+        $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Los correos no son iguales!</strong> <a href='#' class='alert-link'>Por favor, verifique que sus correos coincidan.</a></div>");
+
+                $('#txtMail').focus();
+                $('#txtRepMail').focus();
+
+                $('#txtMail').css('border-color','#ed0c0c');
+                 $('#txtRepMail').css('border-color','#ed0c0c');
+
+    }else if(tel.length <=6 || tel.length >=11){
+
+        $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Numero telefonico incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que sea correcto.</a></div>");
+
+         $('#txtNumTel').focus();
+        $('#txtNumTel').css('border-color','#ed0c0c');
+
+    }else{
+/*
     $.ajax({
         url:"core/controller/contactSignUpController.php",
         type:'POST',
@@ -30,12 +76,17 @@ $(document).on('click','#fistLog',function(){
 
             }else if(data == 2){
                 $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Numero Telefonico Existente!</strong> <a href='#' class='alert-link'>Por favor, ingresa otro numero.</a></div>");
+                $('#txtNumTel').val("");
+                $('#txtNumTel').focus();
+                $('#txtNumTel').css('border-color','#ed0c0c');
+
             }else if(data == 3){
                 alert("Registrado");
                 //$("#secondLog").children().removeAttr('disabled');
             }
         }
-    });
+    });*/
+    }
 });
 
 $(document).on('click','#secondLogBtn',function(){
