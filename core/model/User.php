@@ -12,12 +12,13 @@ class User extends Connection{
         $row = mysqli_fetch_array($executeQuery);
         $userResult=$row["nom_usuario"];
         if($userResult == $userName){
-            $query2 = "select contrasenia from usuario where contrasenia = '".$pass."' and nom_usuario = '".$userName."' ";
+            $query2 = "select contrasenia,idUsuario from usuario where contrasenia = '".$pass."' and nom_usuario = '".$userName."' ";
             $executeQuery2 = mysqli_query($this->getConnection(),$query2) or die ("ERROR ".mysqli_error($this->getConnection()));
             $row2 = mysqli_fetch_array($executeQuery2);
             $passResult = $row2["contrasenia"];
             if($pass == $passResult){
                     echo 1;
+                    $_SESSION["session_id"]=$row2["idUsuario"];
                     $_SESSION["session_user"]=$row["nom_usuario"];
                 }else{
                     echo 3;

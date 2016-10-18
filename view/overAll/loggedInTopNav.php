@@ -1,4 +1,4 @@
-<section id="index-ext_menu-0">
+<section id="menu-0">
 
     <nav class="navbar navbar-dropdown navbar-fixed-top">
         <div class="container">

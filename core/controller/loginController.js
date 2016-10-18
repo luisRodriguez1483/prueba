@@ -20,6 +20,9 @@ function login(){
     }if(password.length != 0 && user.length != 0){
 
         $.ajax({
+            beforeSend:function(){
+            $('#loader').attr('class','loader');
+            },
             url: "core/controller/loginController.php",
             type:"POST",
             data:{

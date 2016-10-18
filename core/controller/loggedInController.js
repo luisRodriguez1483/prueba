@@ -2,6 +2,9 @@ $(document).on('click', '#closeSession', function() {
     //alert("ok 2");
     var flag = "true";
     $.ajax({
+        beforeSend: function() {
+            $('#loader').attr('class', 'loader');
+        },
         url: "core/controller/logoutController.php",
         type: "POST",
         data: {
@@ -38,11 +41,99 @@ $(document).ready(function() {
 
 $(document).on('click', '#postVacancy', function() {
     $('#panelMiddle').fadeIn();
-    $('#panelMiddle').html("<div class='form-group'>" + "<label for='txtTitle'>Título</label>" + "<input type='text' placeholder='Título' id='txtTitle'>" + "</div>" + "<div class='form-group'>" + "<label for='txtVacancies'>No. Vacantes</label>" + "<input type='number' placeholder='No. vacantes' id='txtVacancies'>" + " </div>" + "<div class='form-group'>" + "<label for='cmbWage'>Salario</label>" + "<select name='cmbWage' id='cmbWage'>" + "<option value='0'>Seleccione Salario</option>" + "<option value='1'>$1,000.00-$5,000.00</option>" + "<option value='2'>$5,001.00-$9,000.00</option>" + "<option value='3'>$9,001.00-$13,000.00</option>" + "<option value='4'>más de $13,000.00</option>" + "</select>" + "</div>" + "<div class='form-group'>" + "<label for='txtRole'>Funciones</label>" + "<input type='text' placeholder='Funciones' id='txtRole'>" + "</div>" + "<div class='form-group'>" + "<label for='txtRequirements'>Requisitos</label>" + "<input type='text' placeholder='Requisitos' id='txtRequirements'>" + "</div>" + "<div class='form-group'>" + "<label for='txtAcoments'>Comentarios</label>" + "<textArea cols='55' rows='3' placeholder='Prestaciones/Beneficios' id='txtAcoments'></textArea>" + "</div>" + "<div class='form-group'>" + "<label for=''>Fecha expiración</label>" + "<input type='calendar' placeholder='Termina el día' id='txtExpirationDate'>" + "</div>" + "<input type='submit' value='enviar' class='btn btn-black' id='savePost'>");
+    $('#middleTitle').text("Nueva Vacante");
+    $('#panelMiddle').html("<div id='datos' class='control-form' role='form'>"
+                                    +"<div class='form-group'>"
+                                        +"<label for='txtName'>Nombre</label>"
+                                        +"<input type='text' placeholder='Perfil para la vacante' id='txtName'>"
+                                    +"</div>"
+                                    +"<div class='form-group'>"
+                                        +"<label for='txtVacancyPost'>Puesto</label>"
+                                        +"<input type='text'placeholder='Cargo a desempeñar'id='txtVacancyPost'>"
+                                    +"</div>"
+                                    +"<div class='form-group'>"
+                                        +"<label for='txtTypeWorking'>Tipo de jornada</label>"
+                                        +"<input type='text'placeholder='Jornada'id='txtTypeWorking'>"
+                                    +"</div>"
+                                    +"<div class='form-group'>"
+                                        +"<label for='txtVacancies'>No. Vacantes</label>"
+                                        +"<input type='number' placeholder='No. vacantes' id='txtVacancies'>"
+                                    +"</div>"
+                                    +"<div class='form-group'>"
+                                        +"<label for='txtExperience'>Experiencia</label>"
+                                        +"<input type='text'placeholder='Si(tiempo)/No' id='txtExperience'>"
+                                    +"</div>"
+                                    +"<div class='form-group'>"
+                                        +"<label for='txtWorkingPlace'>Zona</label>"
+                                        +"<input type='text' placeholder='Municipio/Estado'id='txtWorkingPlace'>"
+                                    +"</div>"
+                                    +"<div class='form-group'>"
+                                        +"<label for='txtWage'>Salario</label>"
+                                        +"<span class='input-group-addon'>$</span>"
+                                        +"<input type='text' placeholder='Sueldo en pesos'id='txtWage'>"
+                                        +"<span class='input-group-addon'>.00</span>"
+                                    +"</div>"
+                                    +"<div class='form-group'>"
+                                        +"<label for='txtAcoments'>Comentarios</label>"
+                                        +"<textArea cols='55' rows='3' placeholder='Prestaciones/Beneficios/Horarios' id='txtAcoments'></textArea>"
+                                    +"</div>"
+                                    +"<div class='form-group'>"
+                                        +"<label for='txtExpirationDate'>Fecha expiración</label>"
+                                        +"<input type='text' placeholder='Termina el día' id='txtExpirationDate'>"
+                                    +"</div>"
+                                    +"<input type='submit' value='enviar' class='btn btn-black' id='savePost'> "
+                                +"</div>");
 });
 
 $(document).on('click', '#savePost', function() {
-    alert("ok save");
+    var vacancyName = $('#txtName').val();
+    var vacancyPost = $('#txtVacancyPost').val();
+    var typeWorking = $('#txtTypeWorking').val();
+    var numberVacancies = $('#txtVacancies').val();
+    var experience = $('#txtExperience').val();
+    var workingPlace = $('#txtWorkingPlace').val();
+    var wage = $('#txtWage').val();
+    var comments = $('#txtAcoments').val();
+    var expirationDate = $('#txtExpirationDate').val();
+
+    var flag1 = (vacancyName === " " || vacancyName.length === 0) ? 0 : 1;
+    var flag2 = (vacancyPost == " " || vacancyPost.length === 0) ? 0 : 1;
+    var flag3 = (typeWorking == " " || typeWorking.length === 0) ? 0 : 1;
+    var flag4 = (numberVacancies == " " || numberVacancies.length === 0) ? 0 : 1;
+    var flag5 = (experience == " " || experience.length === 0) ? 0 : 1;
+    var flag6 = (wage == 0) ? 0 : 1;
+    var flag7 = (comments == " " || comments.length === 0) ? 0 : 1;
+    var flag8 = (expirationDate == " " || expirationDate.length === 0) ? 0 : 1;
+    var flag9 = (workingPlace == " " || workingPlace.length === 0) ? 0 : 1;
+    var datos=$('#datos').serialize();
+    if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4 == 1 && flag5 == 1 && flag6 == 1 && flag7 == 1 && flag8 == 1 && flag9 == 1) {
+        $.ajax({
+            beforeSend: function() {
+                $('#loader').attr('class', 'loader');
+            },
+            url: "core/controller/addVacancyController.php",
+            type: "POST",
+            data: {
+                vacancyName: vacancyName,
+                vacancyPost: vacancyPost,
+                typeWorking: typeWorking,
+                numberVacancies: numberVacancies,
+                experience: experience,
+                workingPlace: workingPlace,
+                wage: wage,
+                comments: comments,
+                expirationDate: expirationDate
+            },
+            success: function(msg) {
+                alert(msg);
+            },
+            error: function(jqXHR, status, error) {
+                alert("Error " + jqXHR + " " + status + " " + error);
+            }
+        });
+    }else{
+        alert("Campos vacios");
+    }
 });
 
 $(document).on('click', '#reviewPost', function() {
