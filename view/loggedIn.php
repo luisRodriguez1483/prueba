@@ -32,7 +32,7 @@
 
                         <div class="card-block">
                            <div id="loader"></div>
-                            <h4 id="titleMiddle" class="card-title" id="middleTitle">Nueva Vacante</h4>
+                            <h4 id="titleMiddle" class="card-title" id="middleTitle"></h4>
                             <div id="panelMiddle">
 
                             </div>

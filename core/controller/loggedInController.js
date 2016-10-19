@@ -19,6 +19,8 @@ $(document).on('click', '#closeSession', function() {
 });
 
 $(document).ready(function() {
+    $('#loader').fadeOut();
+    $('#titleMiddle').fadeOut();
     var flag = "true";
     $.ajax({
         url: "core/controller/userTypeController.php",
@@ -45,43 +47,43 @@ $(document).on('click', '#postVacancy', function() {
     $('#panelMiddle').html("<div id='datos' class='control-form' role='form'>"
                                     +"<div class='form-group'>"
                                         +"<label for='txtName'>Nombre</label>"
-                                        +"<input type='text' placeholder='Perfil para la vacante' id='txtName'>"
+                                        +"<input type='text' placeholder='Perfil para la vacante' name='txtName' id='txtName'>"
                                     +"</div>"
                                     +"<div class='form-group'>"
                                         +"<label for='txtVacancyPost'>Puesto</label>"
-                                        +"<input type='text'placeholder='Cargo a desempeñar'id='txtVacancyPost'>"
+                                        +"<input type='text' placeholder='Cargo a desempeñar' id='txtVacancyPost' name='txtVacancyPost'>"
                                     +"</div>"
                                     +"<div class='form-group'>"
                                         +"<label for='txtTypeWorking'>Tipo de jornada</label>"
-                                        +"<input type='text'placeholder='Jornada'id='txtTypeWorking'>"
+                                        +"<input type='text' placeholder='Jornada'id='txtTypeWorking' name='txtTypeWorking'>"
                                     +"</div>"
                                     +"<div class='form-group'>"
                                         +"<label for='txtVacancies'>No. Vacantes</label>"
-                                        +"<input type='number' placeholder='No. vacantes' id='txtVacancies'>"
+                                        +"<input type='text' placeholder='No. vacantes' id='txtVacancies' name='txtVacancies'>"
                                     +"</div>"
                                     +"<div class='form-group'>"
                                         +"<label for='txtExperience'>Experiencia</label>"
-                                        +"<input type='text'placeholder='Si(tiempo)/No' id='txtExperience'>"
+                                        +"<input type='text'placeholder='Si(tiempo)/No' id='txtExperience' name='txtExperience'>"
                                     +"</div>"
                                     +"<div class='form-group'>"
                                         +"<label for='txtWorkingPlace'>Zona</label>"
-                                        +"<input type='text' placeholder='Municipio/Estado'id='txtWorkingPlace'>"
+                                        +"<input type='text' placeholder='Municipio/Estado' id='txtWorkingPlace' name='txtWorkingPlace'>"
                                     +"</div>"
                                     +"<div class='form-group'>"
                                         +"<label for='txtWage'>Salario</label>"
                                         +"<span class='input-group-addon'>$</span>"
-                                        +"<input type='text' placeholder='Sueldo en pesos'id='txtWage'>"
+                                        +"<input type='text' placeholder='Sueldo en pesos'id='txtWage' name='txtWage'>"
                                         +"<span class='input-group-addon'>.00</span>"
                                     +"</div>"
                                     +"<div class='form-group'>"
                                         +"<label for='txtAcoments'>Comentarios</label>"
-                                        +"<textArea cols='55' rows='3' placeholder='Prestaciones/Beneficios/Horarios' id='txtAcoments'></textArea>"
+                                        +"<textArea cols='55' rows='3' placeholder='Prestaciones/Beneficios/Horarios' id='txtAcoments' name='txtAcoments'></textArea>"
                                     +"</div>"
                                     +"<div class='form-group'>"
                                         +"<label for='txtExpirationDate'>Fecha expiración</label>"
-                                        +"<input type='text' placeholder='Termina el día' id='txtExpirationDate'>"
+                                        +"<input type='text' placeholder='Termina el día' id='txtExpirationDate' name='txtExpirationDate'>"
                                     +"</div>"
-                                    +"<input type='submit' value='enviar' class='btn btn-black' id='savePost'> "
+                                    +"<input type='submit' value='enviar' class='btn btn-black' id='savePost' name='savePost'> "
                                 +"</div>");
 });
 
@@ -107,6 +109,7 @@ $(document).on('click', '#savePost', function() {
     var flag9 = (workingPlace == " " || workingPlace.length === 0) ? 0 : 1;
     var datos=$('#datos').serialize();
     if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4 == 1 && flag5 == 1 && flag6 == 1 && flag7 == 1 && flag8 == 1 && flag9 == 1) {
+        var flag=true;
         $.ajax({
             beforeSend: function() {
                 $('#loader').attr('class', 'loader');
@@ -114,15 +117,16 @@ $(document).on('click', '#savePost', function() {
             url: "core/controller/addVacancyController.php",
             type: "POST",
             data: {
-                vacancyName: vacancyName,
-                vacancyPost: vacancyPost,
-                typeWorking: typeWorking,
-                numberVacancies: numberVacancies,
-                experience: experience,
-                workingPlace: workingPlace,
-                wage: wage,
-                comments: comments,
-                expirationDate: expirationDate
+                f:flag,
+                vacante: vacancyName,
+                puesto: vacancyPost,
+                jornada: typeWorking,
+                vacantes: numberVacancies,
+                experiencia: experience,
+                zona: workingPlace,
+                salario: wage,
+                comentarios: comments,
+                expira: expirationDate
             },
             success: function(msg) {
                 alert(msg);

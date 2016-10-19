@@ -28,6 +28,7 @@
                        <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogin" placeholder="Usuario">
                         <input type="password" class="form-control" name="txtPasswordLogIn" id="txtPasswordLogin" placeholder="Contraseña">
                     </div>
+                    <div id="loader"></div>
                </div>
 
             </div>
