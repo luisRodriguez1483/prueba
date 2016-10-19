@@ -5,6 +5,21 @@ $(document).ready(function(){
 
 });
 
+$(document).on('change','#cmbTipoPersona',function(){
+    var tipoPersona = $('#cmbTipoPersona').val();
+
+    alert(tipoPersona);
+
+    $.ajax({
+        url:'core/controller/cmbTypePersonRFCController.php',
+        type:'POST',
+        data:{tipoPersona:tipoPersona},
+        success:function(data){
+            $('#typePersonRFCDiv').html(data);
+        }
+    });
+});
+
 $(document).on('click','#fistLog',function(){
 
     var email = $('#txtMail').val();
@@ -167,6 +182,37 @@ $(document).on('click','#lastLogBtn',function(){
     var password = $('#txtPassword').val();
     var repPassword = $('#txtRepPassword').val();
     var type = $('#type').val();
+
+    if(user.length == 0 || $('#txtUserReg').val().trim() == ''){
+
+         $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtUserReg').focus();
+        $('#txtUserReg').css('border-color','#ed0c0c');
+
+    }else if(password.length == 0 ||  $('#txtPassword').val().trim() == ''){
+
+         $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtPassword').focus();
+        $('#txtPassword').css('border-color','#ed0c0c');
+
+    }else if(repPassword.length == 0 || $('#txtRepPassword').val().trim() == ''){
+
+        $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtRepPassword').focus();
+        $('#txtRepPassword').css('border-color','#ed0c0c');
+
+    }else if(password!=repPassword){
+
+        $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Las contraseñas no coinciden!</strong> <a href='#' class='alert-link'>Por favor, ingrese nuevamente su contraseña</a></div>");
+
+        $('#txtRepPassword').focus();
+        $('#txtPassword').focus();
+
+        $('#txtPassword').css('border-color','#ed0c0c');
+        $('#txtRepPassword').css('border-color','#ed0c0c');
+
+    }else{
+
     $.ajax({
         url:"core/controller/userSignUpController.php",
         type:'POST',
@@ -175,39 +221,72 @@ $(document).on('click','#lastLogBtn',function(){
             password:password
         },
         success:function(data){
+                if(data == 1){
 
-        }
+                     $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Usuario existente!</strong> <a href='#' class='alert-link'>Por favor, elija otro nombre de usuario.</a></div>");
+            $('#txtNumExt').focus();
+        $('#txtNumExt').css('border-color','#ed0c0c');
 
+                }if(data == 2){
 
-    });
-    /*Para poder serializar los datos de un formulario es necesario poner en los inputs el name*/
-    if(type == 1){
-        var datosEmpresa = $('#formCompany').serialize();
-        /*var nombreEmpresa = $('#txtNomCompany').val();
-        var giro = $('#txtGiro').val();
-        var rfc = $().val;*/
+                     if(type == 1){
 
-       $.ajax({
-           url:'core/controller/companySignUpController.php',
-           type:'POST',
-           data:{
-               datosEmpresa:datosEmpresa
-           },
-              success:function(data){
-           alert(data);
-       }
+        var empresa = $('#nombreEmpresa').val();
+        var giro = $('#giroEmpresa').val();
+        var rfc = $('#rfcEmpresa').val();
 
-       });
+         if(empresa.length == 0 || $('#nombreEmpresa').val().trim() == ''){
 
+             $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#nombreEmpresa').focus();
+        $('#nombreEmpresa').css('border-color','#ed0c0c');
 
+          }else if(giro.length == 0 || $('#giroEmpresa').val().trim() == ''){
+
+               $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#giroEmpresa').focus();
+        $('#giroEmpresa').css('border-color','#ed0c0c');
+
+          }else if(rfc.length == 0 || $('#rfcEmpresa').val().trim == ''){
+
+              $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#rfcEmpresa').focus();
+        $('#rfcEmpresa').css('border-color','#ed0c0c');
+
+          }else {
+            $.ajax({
+                url:'core/controller/companySignUpController.php',
+                type:'POST',
+                data:{nombreEmpresa:empresa, giroEmpresa:giro,rfcEmpresa:rfc},
+                   success:function(data){
+                alert(data);
+            }
+
+            });
+          }
     }if(type == 2){
 
-        var datosPersona = $('#formPerson').serialize();
-        alert(datosPersona);
+            }
+
+
+
+                }
+
+
+
+        }
+});
+
+
     }
 
-
 });
+
+
+
+
+
+    /*Para poder serializar los datos de un formulario es necesario poner en los inputs el name*/
 
 /*var datos =$("#formularioUsuario").serialize();
 */
