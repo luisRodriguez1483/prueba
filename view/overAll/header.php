@@ -19,9 +19,11 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   <link rel="stylesheet" href="assets/loader/style.css">
+  <link rel="stylesheet" href="view/libs/js/jquery-ui.css">
 
   <script type="text/javascript" src="view/libs/js/jquery.js"></script>
   <script type="text/javascript" src="view/libs/js/jquery.numeric.js"></script>
+  <script type="text/javascript" src="view/libs/js/jquery-ui.js"></script>
   <script type="text/javascript" src="core/controller/userSignUpController.js"></script>
 
   <title><?php echo APP_TITLE ?></title>

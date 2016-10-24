@@ -127,20 +127,17 @@ include ('view/overAll/signUpTopNav.php');
                     </div>
                 </div>
 
-
-
-
-                   <div class="col-xs-12 col-lg-4">
+                    <div class="col-xs-12 col-lg-4">
 
                     <div class="mbr-testimonial card ">
                         <div class="card-block">
                              <div class="">
                 <div role="form">
-                   <div class="form-group" id="divPrimeraParte">
-                        <div id="">
+                   <div class="form-group" id="signUpUserDiv">
+                        <div id="infoErrorUser">
 
                         </div>
-                                      <input type="text" class="form-control" id="txtUserReg" placeholder="Usuario">
+                             <input type="text" class="form-control" id="txtUserReg" placeholder="Usuario">
                              <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña">
                              <input type="password" class="form-control" id="txtRepPassword" placeholder="Repite tu contraseña">
 
@@ -149,18 +146,17 @@ include ('view/overAll/signUpTopNav.php');
             </div>
                         </div>
                         <div class="mbr-author card-footer">
-                            <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformacionUsuario" id=""></div>
+                            <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformacionUsuario" id="btnSignUpUser"></div>
 
 
                         </div>
                     </div>
                 </div>
-
-                    <div class="col-xs-12 col-lg-4">
+                <div class="col-xs-20 col-lg-10">
 
                     <div class="mbr-testimonial card mbr-testimonial-lg">
                         <div class="card-block" id="lastLog">
-                           <div id="infoErrorUsuario">
+                           <div id="infoErrorUltimoReg" style='text-align:center;'>
 
                            </div>
                             <?php
@@ -181,7 +177,7 @@ include ('view/overAll/signUpTopNav.php');
                              <div id="typePersonRFCDiv">
 
                              </div>
-                            </form>
+
                              <?php
                               }else{
                             ?>
@@ -189,12 +185,12 @@ include ('view/overAll/signUpTopNav.php');
                             <input type="text" class="form-control" name="nombrePersona"id="txtNombrePer" placeholder="Nombre">
                             <input type="text" class="form-control" name="apePat" id="txtApePat" placeholder="Apellido Paterno">
                             <input type="text" class="form-control" name="apeMat" id="txtApeMat" placeholder="Apellido Materno">
-                            <input type="text" class="form-control" name="CURP" id="txtCurp" placeholder="CURP">
+                            <input type="text" maxlength="18" class="form-control" name="CURP" id="txtCurp" placeholder="CURP" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
                             <input type="text" class="form-control" name="FechaNac" id="txtFechaNac" placeholder="Fecha Nacimiento">
                             Sexo: <select id="cmbSexo" name="sexo">
-                                <option value="0" class="form-control">Elija una opcion</option>
-                                <option>Maculino</option>
-                                <option>Femenino</option>
+                                <option value="0" class="form-control">Elija una opcion </option>
+                                <option value="M">Maculino</option>
+                                <option value="F">Femenino</option>
                             </select>
 
                             <?php

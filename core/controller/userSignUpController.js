@@ -5,10 +5,23 @@ $(document).ready(function(){
 
 });
 
+$(document).on('focus','#txtFechaNac',function(){
+     $('#txtFechaNac').datepicker({
+
+        dateFormat: "yy/mm/dd",
+         changeYear:"true",
+        yearRange:"1950: ",
+        changeMonth: "true",
+        dayNames: [ "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" ],
+        dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+        firstDay: 1,
+        gotoCurrent: true,
+        monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ]
+     });
+});
+
 $(document).on('change','#cmbTipoPersona',function(){
     var tipoPersona = $('#cmbTipoPersona').val();
-
-    alert(tipoPersona);
 
     $.ajax({
         url:'core/controller/cmbTypePersonRFCController.php',
@@ -63,6 +76,13 @@ $(document).on('click','#fistLog',function(){
 
                 $('#txtMail').css('border-color','#ed0c0c');
                  $('#txtRepMail').css('border-color','#ed0c0c');
+
+    }else if(tel.length<10){
+
+                $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡El telefono es incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que su telefono.</a></div>");
+
+        $('#txtNumTel').focus();
+        $('#txtNumTel').css('border-color','#ed0c0c');
 
     }else{
     $.ajax({
@@ -177,33 +197,33 @@ $(document).on('click','#secondLogBtn',function(){
 
 
 
-$(document).on('click','#lastLogBtn',function(){
+$(document).on('click','#btnSignUpUser',function(){
     var user = $('#txtUserReg').val();
     var password = $('#txtPassword').val();
     var repPassword = $('#txtRepPassword').val();
-    var type = $('#type').val();
+
 
     if(user.length == 0 || $('#txtUserReg').val().trim() == ''){
 
-         $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+         $('#infoErrorUser').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtUserReg').focus();
         $('#txtUserReg').css('border-color','#ed0c0c');
 
     }else if(password.length == 0 ||  $('#txtPassword').val().trim() == ''){
 
-         $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+         $('#infoErrorUser').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtPassword').focus();
         $('#txtPassword').css('border-color','#ed0c0c');
 
     }else if(repPassword.length == 0 || $('#txtRepPassword').val().trim() == ''){
 
-        $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+        $('#infoErrorUser').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtRepPassword').focus();
         $('#txtRepPassword').css('border-color','#ed0c0c');
 
     }else if(password!=repPassword){
 
-        $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Las contraseñas no coinciden!</strong> <a href='#' class='alert-link'>Por favor, ingrese nuevamente su contraseña</a></div>");
+        $('#infoErrorUser').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Las contraseñas no coinciden!</strong> <a href='#' class='alert-link'>Por favor, ingrese nuevamente tu contraseña</a></div>");
 
         $('#txtRepPassword').focus();
         $('#txtPassword').focus();
@@ -223,73 +243,256 @@ $(document).on('click','#lastLogBtn',function(){
         success:function(data){
                 if(data == 1){
 
-                     $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Usuario existente!</strong> <a href='#' class='alert-link'>Por favor, elija otro nombre de usuario.</a></div>");
-            $('#txtNumExt').focus();
-        $('#txtNumExt').css('border-color','#ed0c0c');
+                     $('#infoErrorUser').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Usuario existente!</strong> <a href='#' class='alert-link'>Por favor, elija otro nombre de usuario.</a></div>");
+                    $('#txtUserReg').val();
+            $('#txtUserReg').focus();
+        $('#txtUserReg').css('border-color','#ed0c0c');
 
                 }if(data == 2){
+                     $('#txtUserReg').val("");
+                    $('#txtPassword').val("");
+                    $('#txtRepPassword').val("");
 
-                     if(type == 1){
+                    $('#infoErrorUser').html("<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Correcto!</strong> <a href='#' class='alert-link'>Tus datos han sido enviados correctamente</a></div>");
+
+                    $("#signUpUserDiv").children().attr("disabled","disabled");
+                }
+        }
+
+});
+
+    }
+
+    });
+
+
+$(document).on('click','#lastLogBtn',function(){
+    var type = $('#type').val();
+    if(type == 1){
 
         var empresa = $('#nombreEmpresa').val();
         var giro = $('#giroEmpresa').val();
-        var rfc = $('#rfcEmpresa').val();
+        var rfc = $('#txtRFC').val();
+        var cmbType = $('#cmbTipoPersona').val();
 
          if(empresa.length == 0 || $('#nombreEmpresa').val().trim() == ''){
 
-             $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+             $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#nombreEmpresa').focus();
         $('#nombreEmpresa').css('border-color','#ed0c0c');
 
           }else if(giro.length == 0 || $('#giroEmpresa').val().trim() == ''){
 
-               $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+               $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#giroEmpresa').focus();
         $('#giroEmpresa').css('border-color','#ed0c0c');
 
-          }else if(rfc.length == 0 || $('#rfcEmpresa').val().trim == ''){
+          }else if(cmbType == 0){
 
-              $('#infoErrorUsuario').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
-            $('#rfcEmpresa').focus();
-        $('#rfcEmpresa').css('border-color','#ed0c0c');
+              $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#cmbTipoPersona').focus();
+        $('#cmbTipoPersona').css('border-color','#ed0c0c');
 
-          }else {
-            $.ajax({
+          }else if(rfc.length === 0 || $('#txtRFC').val().trim == ''){
+
+              $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+            $('#txtRFC').focus();
+        $('#txtRFC').css('border-color','#ed0c0c');
+
+          }else if(cmbType == 1){
+              if(rfc.length === 13){
+                  $.ajax({
                 url:'core/controller/companySignUpController.php',
                 type:'POST',
                 data:{nombreEmpresa:empresa, giroEmpresa:giro,rfcEmpresa:rfc},
                    success:function(data){
-                alert(data);
+                if(data == 1){
+                     $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Esta empresa ya esta registrada!</strong> <a href='#' class='alert-link'>Por favor, ingrese otro nombre.</a></div>");
+                    $('#nombreEmpresa').val("");
+            $('#nombreEmpresa').focus();
+        $('#nombreEmpresa').css('border-color','#ed0c0c');
+                }if(data == 2){
+                    $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Este RFC ya esta registrado!</strong> <a href='#' class='alert-link'>Por favor, ingrese otro RFC.</a></div>");
+                    $('#txtRFC').val("");
+            $('#txtRFC').focus();
+        $('#txtRFC').css('border-color','#ed0c0c');
+                }if(data == 3){
+                    $('#nombreEmpresa').val("");
+                    $('#giroEmpresa').val("");
+                    $('#txtRFC').val("");
+                    $('#cmbTipoPersona').val(0);
+                     $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Has terminado tu registro con exito!</strong> <a href='#' class='alert-link'>Ahora puedes iniciar iniciar sesion</a></div>");
+                    $("#lastLog").children().attr("disabled","disabled");
+                }if(data == 4){
+                    $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡RFC incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que sea correcto.</a></div>");
+
+            $('#txtRFC').focus();
+            $('#txtRFC').css('border-color','#ed0c0c');
+                }
             }
+            });
+
+              }else{
+                   $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡RFC incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que sea correcto.</a></div>");
+
+            $('#txtRFC').focus();
+            $('#txtRFC').css('border-color','#ed0c0c');
+              }
+
+          }else if(cmbType == 2){
+              //persona moral
+              if(rfc.length === 12){
+                   $.ajax({
+                url:'core/controller/companySignUpController.php',
+                type:'POST',
+                data:{nombreEmpresa:empresa, giroEmpresa:giro,rfcEmpresa:rfc},
+                   success:function(data){
+                if(data == 1){
+                     $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Esta empresa ya esta registrada!</strong> <a href='#' class='alert-link'>Por favor, ingrese otro nombre.</a></div>");
+                    $('#nombreEmpresa').val("");
+            $('#nombreEmpresa').focus();
+        $('#nombreEmpresa').css('border-color','#ed0c0c');
+                }if(data == 2){
+                    $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Este RFC ya esta registrado!</strong> <a href='#' class='alert-link'>Por favor, ingrese otro RFC.</a></div>");
+                    $('#txtRFC').val("");
+            $('#txtRFC').focus();
+        $('#txtRFC').css('border-color','#ed0c0c');
+                }if(data == 3){
+                    $('#nombreEmpresa').val("");
+                    $('#giroEmpresa').val("");
+                    $('#txtRFC').val("");
+                    $('#cmbTipoPersona').val(0);
+                     $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Has terminado tu registro con exito!</strong> <a href='#' class='alert-link'>Ahora puedes iniciar iniciar sesion</a></div>");
+                    $("#lastLog").children().attr("disabled","disabled");
+                }if(data == 4){
+                    $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡RFC incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que sea correcto.</a></div>");
+
+            $('#txtRFC').focus();
+            $('#txtRFC').css('border-color','#ed0c0c');
+                }
+            }
+            });
+              }else{
+                     $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡RFC incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que sea correcto.</a></div>");
+
+            $('#txtRFC').focus();
+            $('#txtRFC').css('border-color','#ed0c0c');
+              }
+          }
+
+    }else if(type == 2){
+        var nombre = $('#txtNombrePer').val();
+        var apePat = $('#txtApePat').val();
+        var apeMat = $('#txtApeMat').val();
+        var curp = $('#txtCurp').val();
+        var fecNac = $('#txtFechaNac').val();
+        var sexo = $('#cmbSexo').val();
+
+
+        //alert(nombre+" "+apePat+" "+apeMat+" "+curp+" "+fecNac+" "+sexo);
+
+        if(nombre.length == 0 || $('#txtNombrePer').val().trim == ''){
+            $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+
+              $('#txtNombrePer').focus();
+            $('#txtNombrePer').css('border-color','#ed0c0c');
+
+        }else if(apePat.length == 0 || $('#txtApePat').val().trim == ''){
+
+            $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+
+              $('#txtApePat').focus();
+            $('#txtApePat').css('border-color','#ed0c0c');
+
+        }else if(apeMat.length == 0 || $('#txtApeMat').val().trim == ''){
+
+            $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+
+              $('#txtApeMat').focus();
+            $('#txtApeMat').css('border-color','#ed0c0c');
+
+        }else if(curp.length == 0 || $('#txtCurp').val().trim == ''){
+
+              $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+
+              $('#txtCurp').focus();
+            $('#txtCurp').css('border-color','#ed0c0c');
+
+
+        }else if(fecNac.length == 0 || $('#txtFechaNac').val().trim == ''){
+
+            $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+
+              $('#txtFechaNac').focus();
+            $('#txtFechaNac').css('border-color','#ed0c0c');
+
+        }else if(sexo == 0){
+            $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
+
+              $('#cmbSexo').focus();
+            $('#cmbSexo').css('border-color','#ed0c0c');
+
+        }else {
+
+            if(curp.length === 18){
+
+            if(curp.match(/^([a-z]{4})([0-9]{6})([a-z]{6})([0-9]{2})$/i)){
+
+            $.ajax({
+                url:'core/controller/signUpPersonController.php',
+                type:'POST',
+                data:{
+                    nombre:nombre,
+                    apePat:apePat,
+                    apeMat:apeMat,
+                    curp:curp,
+                    fecNac:fecNac,
+                    sexo:sexo
+                },success:function(data){
+                    if(data == 1){
+                         $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Curp Registrado!</strong> <a href='#' class='alert-link'>Por favor, verique que sea correcto.</a></div>");
+                $('#txtCurp').val("");
+              $('#txtCurp').focus();
+            $('#txtCurp').css('border-color','#ed0c0c');
+                    }if(data == 2){
+
+                        $('#txtNombrePer').val("");
+                        $('#txtApePat').val("");
+                        $('#txtApeMat').val("");
+                        $('#txtCurp').val("");
+                        $('#txtFechaNac').val("");
+                        $('#cmbSexo').val(0);
+
+                        $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Has terminado tu registro con exito!</strong> <a href='#' class='alert-link'>Ahora puedes iniciar iniciar sesion</a></div>");
+                    $("#lastLog").children().attr("disabled","disabled");
+
+                    }
+                }
 
             });
-          }
-    }if(type == 2){
 
-            }
+        }else{
+            $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Curp incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verique que sea correcto.</a></div>");
+
+              $('#txtCurp').focus();
+            $('#txtCurp').css('border-color','#ed0c0c');
+        }
+
+        }else{
+             $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Curp incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verique que sea correcto.</a></div>");
+
+              $('#txtCurp').focus();
+            $('#txtCurp').css('border-color','#ed0c0c');
+        }
 
 
 
-                }
+
 
 
 
         }
-});
 
 
     }
-
 });
-
-
-
-
-
-    /*Para poder serializar los datos de un formulario es necesario poner en los inputs el name*/
-
-/*var datos =$("#formularioUsuario").serialize();
-*/
-
-
-
