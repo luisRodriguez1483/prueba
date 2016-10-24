@@ -10,17 +10,18 @@ function login(){
     var user=$('#txtUserLogin').val();
     var password=$('#txtPasswordLogin').val();
     if(user.length === 0){
-        $('#loginError').html("<div class='alert alert-dismissible alert-warning'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Hay algo vacío!</strong> <a href='#' class='alert-link'>Ingresa tu usuario.</a></div>");
+        $('#loginError').html("<div class='alert alert-dismissible alert-warning'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>¡Hay algo vacío!</strong> <a href='#' class='alert-link'>Ingresa tu usuario.</a></div>");
         $('#txtUserLogin').css('border-color','#ed620c');
         $('#txtUserLogin').focus();
     }if(password.length === 0){
-        $('#loginError').html("<div class='alert alert-dismissible alert-warning'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Hay algo vacío!</strong> <a href='#' class='alert-link'>Ingresa tu contraseña.</a></div>");
+        $('#loginError').html("<div class='alert alert-dismissible alert-warning'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>¡Hay algo vacío!</strong> <a href='#' class='alert-link'>Ingresa tu contraseña.</a></div>");
         $('#txtUserLogin').css('border-color','#ed620c');
         $('#txtPasswordLogin').focus();
     }if(password.length != 0 && user.length != 0){
 
         $.ajax({
             beforeSend:function(){
+            $('#modalLogin').attr('class','modal fade out');
             $('#loader').attr('class','loader');
             },
             url: "core/controller/loginController.php",
@@ -31,15 +32,15 @@ function login(){
             },
             success: function(msg){
                 if(msg == 1){
-                    $('#modalLogin').fadeOut();
+
                     window.location="?view=login";
                 }else if(msg == 2){
-                    $('#loginError').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Usuario incorrecto!</strong> <a href='#' class='alert-link'>Intenta de nuevo.</a></div>");
+                    $('#loginError').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>¡Usuario incorrecto!</strong> <a href='#' class='alert-link'>Intenta de nuevo.</a></div>");
                     $('#txtUserLogin').focus();
                     $('#txtUserLogin').val("");
                     $('#txtUserLogin').css('border-color','#ed0c0c');
                 }else if(msg == 3){
-                    $('#loginError').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Contraseña incorrecta!</strong> <a href='#' class='alert-link'>Intenta de nuevo.</a></div>");
+                    $('#loginError').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>¡Contraseña incorrecta!</strong> <a href='#' class='alert-link'>Intenta de nuevo.</a></div>");
                     $('#txtPasswordLogin').focus();
                     $('#txtPasswordLogin').val("");
                     $('#txtPasswordLogin').css('border-color','#ed0c0c');

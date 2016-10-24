@@ -3,6 +3,7 @@
 <?php include ( 'view/overAll/header.php'); ?>
 
 <body>
+    <script type="text/javascript" src="core/controller/loggedInController.js"></script>
     <?php include( 'view/overAll/loggedInTopNav.php'); ?>
 
     <section class="engine"></section>
@@ -18,7 +19,7 @@
 
                         <div class="card-block" style="text-align:left;">
                             <h4 class="card-title">Mi panel de control</h4>
-                            <h6 class="card-h"> <?php echo "Hola ".$_SESSION["session_id"]." ".$_SESSION["session_user"]; ?> </h6>
+                            <h6 class="card-h"> <?php echo "¡Hola ".$_SESSION["session_user"]."!"; ?> </h6>
                             <div id="panelContent" class="btn-group-vertical">
 
                             </div>
@@ -31,9 +32,13 @@
                     <div class="card cart-block">
 
                         <div class="card-block">
-                           <div id="loader"></div>
-                            <h4 id="titleMiddle" class="card-title" id="middleTitle"></h4>
-                            <div id="panelMiddle">
+                            <h4 id="middleTitle" class="card-title"></h4>
+                            <div id="stateMessage">
+                            </div>
+                            <div id="loader">
+
+                            </div>
+                            <div id="middlePanel">
 
                             </div>
                         </div>
