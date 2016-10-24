@@ -75,15 +75,15 @@ $(document).on('click', '#savePost', function() {
     var comments = $('#txtAcoments').val();
     var expirationDate = $('#txtExpirationDate').val();
 
-    var flag1 = (vacancyName === " " || vacancyName.length === 0) ? 0 : 1;
-    var flag2 = (vacancyPost == " " || vacancyPost.length === 0) ? 0 : 1;
-    var flag3 = (typeWorking == " " || typeWorking.length === 0) ? 0 : 1;
-    var flag4 = (numberVacancies == " " || numberVacancies.length === 0) ? 0 : 1;
-    var flag5 = (experience == " " || experience.length === 0) ? 0 : 1;
-    var flag6 = (wage == 0) ? 0 : 1;
-    var flag7 = (comments == " " || comments.length === 0) ? 0 : 1;
-    var flag8 = (expirationDate == " " || expirationDate.length === 0) ? 0 : 1;
-    var flag9 = (workingPlace == " " || workingPlace.length === 0) ? 0 : 1;
+    var flag1 = (vacancyName.val().trim() == "" || vacancyName.length === 0) ? 0 : 1;
+    var flag2 = (vacancyPost.val().trim() == "" || vacancyPost.length === 0) ? 0 : 1;
+    var flag3 = (typeWorking.val().trim() == "" || typeWorking.length === 0) ? 0 : 1;
+    var flag4 = (numberVacancies.val().trim() == "" || numberVacancies.length === 0) ? 0 : 1;
+    var flag5 = (experience.val().trim() == "" || experience.length === 0) ? 0 : 1;
+    var flag6 = (wage.val().trim() == 0) ? 0 : 1;
+    var flag7 = (comments.val().trim() == "" || comments.length === 0) ? 0 : 1;
+    var flag8 = (expirationDate.val().trim() == "" || expirationDate.length === 0) ? 0 : 1;
+    var flag9 = (workingPlace.val().trim() == "" || workingPlace.length === 0) ? 0 : 1;
     if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4 == 1 && flag5 == 1 && flag6 == 1 && flag7 == 1 && flag8 == 1 && flag9 == 1) {
         var flag=true;
         $.ajax({
@@ -119,8 +119,9 @@ $(document).on('click', '#savePost', function() {
             }
         });
     }else{
-        alert("Campos vacios");
-    }
+                $('#stateMessage').html("<div class='alert alert-dismissible alert-success'>"
+                                       +"<button type='button' class='close' data-dismiss='alert'>&times;</button><strong>¡No debe dejar ningun campo vacio!</strong>"
+                                       +"<a href='#' class='alert-link'> Por favor, ingrese todos los datos.</a></div>");    }
 });
 
 $(document).on('click', '#reviewPost', function() {
