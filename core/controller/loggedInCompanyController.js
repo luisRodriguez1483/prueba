@@ -23,7 +23,7 @@ $(document).on('click', '#postVacancy', function() {
                                     +"<div class='form-group row'>"
                                         +"<label class='col-xs-2 col-form-label' for='txtVacancies'>No. Vacantes</label>"
                                         +"<div class='col-xs-10'>"
-                                        +"<input type='text' class='form-control' placeholder='No. vacantes' id='txtVacancies' name='txtVacancies'>"
+                                        +"<input type='number' min='0' class='form-control' placeholder='No. vacantes' id='txtVacancies' name='txtVacancies'>"
                                     +"</div>"
                                     +"</div>"
                                     +"<div class='form-group row'>"
