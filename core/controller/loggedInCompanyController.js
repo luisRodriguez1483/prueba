@@ -9,7 +9,7 @@ $(document).on('click', '#postVacancy', function() {
                                     +"</div>"
                                     +"</div>"
                                     +"<div class='form-group row'>"
-                                        +"<label class='col-xs-2 col-form-label' for='txtVacancyPost'>Puesto</label>"
+                                        +"<label class='col-xs-2 col-form-label' for='txtVacancyPost'>Perfil </label>"
                                         +"<div class='col-xs-10'>"
                                         +"<input type='text' class='form-control' placeholder='Cargo a desempeñar' id='txtVacancyPost' name='txtVacancyPost'>"
                                     +"</div>"
@@ -75,15 +75,15 @@ $(document).on('click', '#savePost', function() {
     var comments = $('#txtAcoments').val();
     var expirationDate = $('#txtExpirationDate').val();
 
-    var flag1 = (vacancyName.val().trim() == "" || vacancyName.length === 0) ? 0 : 1;
-    var flag2 = (vacancyPost.val().trim() == "" || vacancyPost.length === 0) ? 0 : 1;
-    var flag3 = (typeWorking.val().trim() == "" || typeWorking.length === 0) ? 0 : 1;
-    var flag4 = (numberVacancies.val().trim() == "" || numberVacancies.length === 0) ? 0 : 1;
-    var flag5 = (experience.val().trim() == "" || experience.length === 0) ? 0 : 1;
-    var flag6 = (wage.val().trim() == 0) ? 0 : 1;
-    var flag7 = (comments.val().trim() == "" || comments.length === 0) ? 0 : 1;
-    var flag8 = (expirationDate.val().trim() == "" || expirationDate.length === 0) ? 0 : 1;
-    var flag9 = (workingPlace.val().trim() == "" || workingPlace.length === 0) ? 0 : 1;
+    var flag1 = (vacancyName.trim() == "" || vacancyName.length === 0) ? 0 : 1;
+    var flag2 = (vacancyPost.trim() == "" || vacancyPost.length === 0) ? 0 : 1;
+    var flag3 = (typeWorking.trim() == "" || typeWorking.length === 0) ? 0 : 1;
+    var flag4 = (numberVacancies.trim() == "" || numberVacancies.length === 0) ? 0 : 1;
+    var flag5 = (experience.trim() == "" || experience.length === 0) ? 0 : 1;
+    var flag6 = (wage.trim() == 0) ? 0 : 1;
+    var flag7 = (comments.trim() == "" || comments.length === 0) ? 0 : 1;
+    var flag8 = (expirationDate.trim() == "" || expirationDate.length === 0) ? 0 : 1;
+    var flag9 = (workingPlace.trim() == "" || workingPlace.length === 0) ? 0 : 1;
     if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4 == 1 && flag5 == 1 && flag6 == 1 && flag7 == 1 && flag8 == 1 && flag9 == 1) {
         var flag=true;
         $.ajax({

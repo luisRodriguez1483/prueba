@@ -8,8 +8,14 @@ $(document).ready(function(){
        type:"POST",
        data:{flg:flag},
         success: function (msg){
+            if(msg == 2){
+                $('#middleTitle').text("Algunos empleos para ti");
+              $('#stateMessage').html("<div class='alert alert-dismissible alert-info'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>¡No se han encontrado vacantes!</strong> <a href='#' class='alert-link'>Pero no te precupes seguiremos buscando la mejor opcion para ti</a></div>");
+            }else{
+
             $('#middleTitle').text("Algunos empleos para ti");
             $('#middlePanel').html(msg);
+            }
         },
         error: function (jqXHR,status,error) {
             alert(jqXHR+status+error);

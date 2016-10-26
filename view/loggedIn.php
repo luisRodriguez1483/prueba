@@ -65,7 +65,7 @@
                                 <br>
                                 <br>
                                 <br>
-                                <br>Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise makes it easy for you to use them on your website easily and freely.</p>
+                                <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia ratione incidunt nisi sed perferendis rem dolorem omnis quod. Aperiam reprehenderit, quas labore qui mollitia explicabo officiis necessitatibus nostrum assumenda ab.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis quos fugit commodi nobis maiores at fugiat atque tenetur deleniti molestiae praesentium odit ipsum quod, rerum ea unde nihil id eaque!.</p>
 
                         </div>
                     </div>
