@@ -30,14 +30,25 @@ $(document).ready(function() {
         },
         success: function(msg) {
             if (msg == 1) {
-                $('#panelContent').html("<p id='postVacancy'class='btn btn-white'>Publicar Vacante</p>" + "<p id='reviewPost'class='btn btn-white'>Revisar Vacantes Publicadas</p>" + "<p id='companyMessage'class='btn btn-white'>Mensajes</p>" + "<p id='scheduleInterview'class='btn btn-white'>Agendar Cita Entrevista</p>" + "<p id='makeCall'class='btn btn-white'>Realizar Videollamada</p>");
+                $('#panelContent').html("<div class='btn-group-vertical' role='group'>"
+                                    +"<button type='button' class='btn btn-white' id='postVacancy'>Publicar</button>"
+                                    +"<button type='button' class='btn btn-white' id='reviewPost'>Revisar Vacantes Publicadas</button>"
+                                    +"<button type='button' class='btn btn-white' id='companyMessage'>Mensajes</button>"
+                                    +"<button type='button' class='btn btn-white' id='scheduleInterview'>Agendar Cita Entrevista</button>"
+                                    +"<button type='button' class='btn btn-white' id='makeCall'>Realizar Videollamada</button>"
+                                    +"</div>");
                 $.getScript( "core/controller/loggedInCompanyController.js", function( data, textStatus, jqxhr ) {
                     //console.log( data ); // Data returned
                     //console.log( textStatus ); // Success
                     //console.log( jqxhr.status ); // 200
                 });
             } else if (msg == 2) {
-                $('#panelContent').html("<p id='aplications' class='btn btn-white'>Mis Postulaciones</p>" + "<p id='curriculum' class='btn btn-white'>Actualizar Curriculum</p>" + "<p id='personMessage' class='btn btn-white'>Mensajes</p>" + "<p id='' class='btn btn-white'>Ver mis citas de entrevista</p>");
+                $('#panelContent').html("<div class='btn-group-vertical' role='group'>"
+                                    +"<button type='button' class='btn btn-white' id='applications'>Mis Postulaciones</button>"
+                                    +"<button type='button' class='btn btn-white' id='updateCv'>Actualizar Curriculum</button>"
+                                    +"<button type='button' class='btn btn-white' id='personMessage'>Mensajes</button>"
+                                    +"<button type='button' class='btn btn-white' id='viewMyInterviews'>Ver mis citas de entrevista</button>"
+                                    +"</div>");
                 $.getScript( "core/controller/loggedInPersonController.js", function( data, textStatus, jqxhr ) {
                     //console.log( data ); // Data returned
                     //console.log( textStatus ); // Success

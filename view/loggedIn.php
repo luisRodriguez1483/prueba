@@ -12,28 +12,28 @@
 
 
         <div class="mbr-cards-row row striped">
-
-            <div class="mbr-cards-col col-xs-12 col-lg-3 " style="padding-top: 160px; padding-bottom: 160px;">
+            <div class="mbr-cards-col col-xs-12 col-md-4 col-lg-3 " style="padding-top: 160px; padding-bottom: 160px;">
                 <div class="container">
                     <div class="card cart-block">
-
                         <div class="card-block" style="text-align:left;">
                             <h4 class="card-title">Mi panel de control</h4>
                             <h6 class="card-h"> <?php echo "¡Hola ".$_SESSION["session_user"]."!"; ?> </h6>
-                            <div id="panelContent" class="btn-group-vertical">
+                            <div id="panelContent">
+                                <div class="btn-group-vertical" role="group">
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mbr-cards-col col-xs-12 col-lg-6" style="padding-top: 160px; padding-bottom: 160px;">
+            <div class="mbr-cards-col col-xs-12 col-md-4 col-lg-6" style="padding-top: 160px; padding-bottom: 160px;">
                 <div class="container">
                     <div class="card cart-block">
-
                         <div class="card-block">
                             <h4 id="middleTitle" class="card-title"></h4>
                             <div id="stateMessage">
+
                             </div>
                             <div id="loader">
 
@@ -42,11 +42,10 @@
 
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-            <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 160px; padding-bottom: 160px;">
+            <div class="mbr-cards-col col-xs-12 col-md-4 col-lg-3" style="padding-top: 160px; padding-bottom: 160px;">
                 <div class="container">
                     <div class="card cart-block">
 
