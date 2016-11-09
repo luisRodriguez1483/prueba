@@ -5,6 +5,10 @@ $(document).ready(function(){
 
 });
 
+$(document).on('click','#li',function(){
+    $('#modal-body').load('');
+})
+
 $(document).on('focus','#txtFechaNac',function(){
      $('#txtFechaNac').datepicker({
 

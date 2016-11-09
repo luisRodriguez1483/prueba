@@ -111,12 +111,59 @@
     </section>
 
     <section class="mbr-cards mbr-section mbr-section-nopadding" id="index-features1-0" style="background-color: rgb(255, 255, 255);">
+        <div class="mbr-cards-row row striped" id="begin">
+            <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
+                <div class="container">
+                    <div class="card cart-block">
+                        <div class="card-block">
+                            <span class="card-title">Haz clic sobre la empresa si buscas gente profesional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
+                   <div class="card cart-block">
+                       <div class="container">
+                        <div class="card-img">
+                            <a href="?view=signUp&type=1"><img src="assets/images/empresa-600x600-48.png" class="card-img-top" alt="Empresa" id="imgCompany"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mbr-cards-row row striped">
+                <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
+                    <div class="container">
+                        <div class="card cart-block">
+                            <div class="card-block">
+                                <span class="card-title">Haz clic sobre la persona si deseas buscar empleo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
+                    <div class="container">
+                        <div class="card cart-block">
+                            <div class="card-img">
+                                <a href="?view=signUp&type=2"><img src="assets/images/persona-600x600-10.png" class="card-img-top" alt="Persona" id="imgPerson"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="mbr-cards-row row striped" id="aboutUs">
             <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
+                              <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
                             <span class="card-title">¿Quienés somos?</span>
                             <div class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, nulla, tempore! Atque, animi? Beatae distinctio incidunt eaque, aspernatur, ipsum quos maiores voluptatum nam, ad inventore voluptatem praesentium dolores maxime perferendis.
@@ -130,6 +177,13 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
+                           <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
                             <span class="card-title">Misión</span>
                             <div class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, nulla, tempore! Atque, animi? Beatae distinctio incidunt eaque, aspernatur, ipsum quos maiores voluptatum nam, ad inventore voluptatem praesentium dolores maxime perferendis.
@@ -143,6 +197,13 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
+                           <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
                             <span class="card-title">Visión</span>
                             <div class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, nulla, tempore! Atque, animi? Beatae distinctio incidunt eaque, aspernatur, ipsum quos maiores voluptatum nam, ad inventore voluptatem praesentium dolores maxime perferendis.
@@ -155,6 +216,13 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
+                           <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
+                               <br>
                             <span class="card-title">Valores</span>
                             <div class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, nulla, tempore! Atque, animi? Beatae distinctio incidunt eaque, aspernatur, ipsum quos maiores voluptatum nam, ad inventore voluptatem praesentium dolores maxime perferendis.
@@ -165,51 +233,8 @@
             </div>
         </div>
 
-        <div class="mbr-cards-row row striped" id="begin">
-            <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
-                <div class="container">
-                    <div class="card cart-block">
-                        <div class="card-block">
-                            <span class="card-title">Haz clic sobre la empresa si buscar gente profesional</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
-                <div class="container">
-                    <div class="card cart-block">
-                        <div class="card-img">
-                            <a href="?view=signUp&type=2"><img src="assets/images/empresa-600x600-48.png" class="card-img-top" alt="Persona" id="imgPerson"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
-            <div class="mbr-cards-row row striped">
-                <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
-                    <div class="container">
-                        <div class="card cart-block">
-                            <div class="card-block">
-                                <span class="card-title">Haz clic sobre la persona si deseas buscar empleo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
-                    <div class="container">
-                        <div class="card cart-block">
-                            <div class="card-img">
-                                <a href="?view=signUp&type=2"><img src="assets/images/persona-600x600-10.png" class="card-img-top" alt="Persona" id="imgPerson"></a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
 
