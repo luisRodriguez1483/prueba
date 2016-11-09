@@ -18,11 +18,11 @@ function login(){
         $('#txtUserLogin').css('border-color','#ed620c');
         $('#txtPasswordLogin').focus();
     }if(password.length != 0 && user.length != 0){
-
+        $('#loginError').alert('close');
         $.ajax({
             beforeSend:function(){
             $('#modalLogin').attr('class','modal fade out');
-            $('#loader').attr('class','loader');
+            $('#spinner').attr('class','loader');
             },
             url: "core/controller/loginController.php",
             type:"POST",
@@ -38,17 +38,22 @@ function login(){
                     $('#loginError').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>¡Usuario incorrecto!</strong> <a href='#' class='alert-link'>Intenta de nuevo.</a></div>");
                     $('#txtUserLogin').focus();
                     $('#txtUserLogin').val("");
-                    $('#txtUserLogin').css('border-color','#ed0c0c');
+                    $('#txtUserLogin').css('border-color','#cd0808');
+                    $('#txtPasswordLogin').css('border-color','');
                 }else if(msg == 3){
                     $('#loginError').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>¡Contraseña incorrecta!</strong> <a href='#' class='alert-link'>Intenta de nuevo.</a></div>");
                     $('#txtPasswordLogin').focus();
                     $('#txtPasswordLogin').val("");
-                    $('#txtPasswordLogin').css('border-color','#ed0c0c');
+                    $('#txtPasswordLogin').css('border-color','#cd0808');
+                    $('#txtUserLogin').css('border-color','');
                 }
 
             },error: function(jqXHR,textstatus,errorThrown){
                // console.error(xhr.status +": "+ xhr.statusText);
                 alert("Error: "+jqXHR.resoponseText +" "+textstatus.resoponseText+ " " +errorThrown.resoponseText);
+            },
+            complete:function(){
+                $('#spinner').attr('class','');
             }
 
         });
