@@ -47,29 +47,29 @@ $(document).on('click','#fistLog',function(){
     if(email.length == 0 || $('#txtMail').val().trim() == ''){
          $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtMail').focus();
-        $('#txtMail').css('border-color','#ed0c0c');
+        $('#txtMail').css('border-color','#cd0808');
 
     }else if(repEmail.length == 0 || $('#txtRepMail').val().trim() == ''){
          $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtRepMail').focus();
-        $('#txtRepMail').css('border-color','#ed0c0c');
+        $('#txtRepMail').css('border-color','#cd0808');
     }else if(tel.length == 0 || $('#txtNumTel').val().trim() == ''){
 
          $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtNumTel').focus();
-        $('#txtNumTel').css('border-color','#ed0c0c');
+        $('#txtNumTel').css('border-color','#cd0808');
 
     }else if(email.indexOf('@', 0) == -1 || email.indexOf('.', 0) == -1){
 
         $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Correo incorrecto!</strong> <a href='#' class='alert-link'>Por favor, ingrese su correo nuevamente.</a></div>");
             $('#txtMail').focus();
-        $('#txtMail').css('border-color','#ed0c0c');
+        $('#txtMail').css('border-color','#cd0808');
 
     }else if(repEmail.indexOf('@', 0) == -1 || repEmail.indexOf('.', 0) == -1){
 
          $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Correo incorrecto!</strong> <a href='#' class='alert-link'>Por favor, ingrese su correo nuevamente.</a></div>");
             $('#txtRepMail').focus();
-        $('#txtRepMail').css('border-color','#ed0c0c');
+        $('#txtRepMail').css('border-color','#cd0808');
 
     }else if(email!=repEmail || repEmail!=email){
 
@@ -78,15 +78,15 @@ $(document).on('click','#fistLog',function(){
                 $('#txtMail').focus();
                 $('#txtRepMail').focus();
 
-                $('#txtMail').css('border-color','#ed0c0c');
-                 $('#txtRepMail').css('border-color','#ed0c0c');
+                $('#txtMail').css('border-color','#cd0808');
+                 $('#txtRepMail').css('border-color','#cd0808');
 
     }else if(tel.length<10){
 
                 $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡El telefono es incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que su telefono.</a></div>");
 
         $('#txtNumTel').focus();
-        $('#txtNumTel').css('border-color','#ed0c0c');
+        $('#txtNumTel').css('border-color','#cd0808');
 
     }else{
     $.ajax({
@@ -102,14 +102,14 @@ $(document).on('click','#fistLog',function(){
                 $('#txtMail').focus();
                 $('#txtRepMail').focus();
 
-                $('#txtMail').css('border-color','#ed0c0c');
-                 $('#txtRepMail').css('border-color','#ed0c0c');
+                $('#txtMail').css('border-color','#cd0808');
+                 $('#txtRepMail').css('border-color','#cd0808');
 
             }else if(data == 2){
                 $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Numero Telefonico Existente!</strong> <a href='#' class='alert-link'>Por favor, ingresa otro numero.</a></div>");
                 $('#txtNumTel').val("");
                 $('#txtNumTel').focus();
-                $('#txtNumTel').css('border-color','#ed0c0c');
+                $('#txtNumTel').css('border-color','#cd0808');
 
             }else if(data == 3){
                 $("#secondLog").children().removeAttr('disabled');
@@ -139,37 +139,37 @@ $(document).on('click','#secondLogBtn',function(){
 
         $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtState').focus();
-        $('#txtState').css('border-color','#ed0c0c');
+        $('#txtState').css('border-color','#cd0808');
 
     }else if(municipio.length == 0 || $('#txtMunicipio').val().trim() == ''){
 
         $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtMunicipio').focus();
-        $('#txtMunicipio').css('border-color','#ed0c0c');
+        $('#txtMunicipio').css('border-color','#cd0808');
 
     }else if(colonia.length == 0 || $('#txtColonia').val().trim() == ''){
 
         $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtColonia').focus();
-        $('#txtColonia').css('border-color','#ed0c0c');
+        $('#txtColonia').css('border-color','#cd0808');
 
     }else if(calle.length == 0 || $('#txtCalle').val().trim() == ''){
 
          $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtCalle').focus();
-        $('#txtCalle').css('border-color','#ed0c0c');
+        $('#txtCalle').css('border-color','#cd0808');
 
     }else if(numInte.length == 0 || $('#txtNumInt').val().trim() == ''){
 
          $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtNumInt').focus();
-        $('#txtNumInt').css('border-color','#ed0c0c');
+        $('#txtNumInt').css('border-color','#cd0808');
 
     }else if(numExt.length == 0 || $('#txtNumExt').val().trim() == ''){
 
         $('#infoErrorDireccion').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtNumExt').focus();
-        $('#txtNumExt').css('border-color','#ed0c0c');
+        $('#txtNumExt').css('border-color','#cd0808');
 
     }else{
     $.ajax({
@@ -211,19 +211,19 @@ $(document).on('click','#btnSignUpUser',function(){
 
          $('#infoErrorUser').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtUserReg').focus();
-        $('#txtUserReg').css('border-color','#ed0c0c');
+        $('#txtUserReg').css('border-color','#cd0808');
 
     }else if(password.length == 0 ||  $('#txtPassword').val().trim() == ''){
 
          $('#infoErrorUser').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtPassword').focus();
-        $('#txtPassword').css('border-color','#ed0c0c');
+        $('#txtPassword').css('border-color','#cd0808');
 
     }else if(repPassword.length == 0 || $('#txtRepPassword').val().trim() == ''){
 
         $('#infoErrorUser').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtRepPassword').focus();
-        $('#txtRepPassword').css('border-color','#ed0c0c');
+        $('#txtRepPassword').css('border-color','#cd0808');
 
     }else if(password!=repPassword){
 
@@ -232,8 +232,8 @@ $(document).on('click','#btnSignUpUser',function(){
         $('#txtRepPassword').focus();
         $('#txtPassword').focus();
 
-        $('#txtPassword').css('border-color','#ed0c0c');
-        $('#txtRepPassword').css('border-color','#ed0c0c');
+        $('#txtPassword').css('border-color','#cd0808');
+        $('#txtRepPassword').css('border-color','#cd0808');
 
     }else{
 
@@ -250,7 +250,7 @@ $(document).on('click','#btnSignUpUser',function(){
                      $('#infoErrorUser').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Usuario existente!</strong> <a href='#' class='alert-link'>Por favor, elija otro nombre de usuario.</a></div>");
                     $('#txtUserReg').val();
             $('#txtUserReg').focus();
-        $('#txtUserReg').css('border-color','#ed0c0c');
+        $('#txtUserReg').css('border-color','#cd0808');
 
                 }if(data == 2){
                      $('#txtUserReg').val("");
@@ -283,25 +283,25 @@ $(document).on('click','#lastLogBtn',function(){
 
              $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#nombreEmpresa').focus();
-        $('#nombreEmpresa').css('border-color','#ed0c0c');
+        $('#nombreEmpresa').css('border-color','#cd0808');
 
           }else if(giro.length == 0 || $('#giroEmpresa').val().trim() == ''){
 
                $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#giroEmpresa').focus();
-        $('#giroEmpresa').css('border-color','#ed0c0c');
+        $('#giroEmpresa').css('border-color','#cd0808');
 
           }else if(cmbType == 0){
 
               $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#cmbTipoPersona').focus();
-        $('#cmbTipoPersona').css('border-color','#ed0c0c');
+        $('#cmbTipoPersona').css('border-color','#cd0808');
 
           }else if(rfc.length === 0 || $('#txtRFC').val().trim == ''){
 
               $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
             $('#txtRFC').focus();
-        $('#txtRFC').css('border-color','#ed0c0c');
+        $('#txtRFC').css('border-color','#cd0808');
 
           }else if(cmbType == 1){
               if(rfc.length === 13){
@@ -314,12 +314,12 @@ $(document).on('click','#lastLogBtn',function(){
                      $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Esta empresa ya esta registrada!</strong> <a href='#' class='alert-link'>Por favor, ingrese otro nombre.</a></div>");
                     $('#nombreEmpresa').val("");
             $('#nombreEmpresa').focus();
-        $('#nombreEmpresa').css('border-color','#ed0c0c');
+        $('#nombreEmpresa').css('border-color','#cd0808');
                 }if(data == 2){
                     $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Este RFC ya esta registrado!</strong> <a href='#' class='alert-link'>Por favor, ingrese otro RFC.</a></div>");
                     $('#txtRFC').val("");
             $('#txtRFC').focus();
-        $('#txtRFC').css('border-color','#ed0c0c');
+        $('#txtRFC').css('border-color','#cd0808');
                 }if(data == 3){
                     $('#nombreEmpresa').val("");
                     $('#giroEmpresa').val("");
@@ -331,7 +331,7 @@ $(document).on('click','#lastLogBtn',function(){
                     $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡RFC incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que sea correcto.</a></div>");
 
             $('#txtRFC').focus();
-            $('#txtRFC').css('border-color','#ed0c0c');
+            $('#txtRFC').css('border-color','#cd0808');
                 }
             }
             });
@@ -340,7 +340,7 @@ $(document).on('click','#lastLogBtn',function(){
                    $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡RFC incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que sea correcto.</a></div>");
 
             $('#txtRFC').focus();
-            $('#txtRFC').css('border-color','#ed0c0c');
+            $('#txtRFC').css('border-color','#cd0808');
               }
 
           }else if(cmbType == 2){
@@ -355,12 +355,12 @@ $(document).on('click','#lastLogBtn',function(){
                      $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Esta empresa ya esta registrada!</strong> <a href='#' class='alert-link'>Por favor, ingrese otro nombre.</a></div>");
                     $('#nombreEmpresa').val("");
             $('#nombreEmpresa').focus();
-        $('#nombreEmpresa').css('border-color','#ed0c0c');
+        $('#nombreEmpresa').css('border-color','#cd0808');
                 }if(data == 2){
                     $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Este RFC ya esta registrado!</strong> <a href='#' class='alert-link'>Por favor, ingrese otro RFC.</a></div>");
                     $('#txtRFC').val("");
             $('#txtRFC').focus();
-        $('#txtRFC').css('border-color','#ed0c0c');
+        $('#txtRFC').css('border-color','#cd0808');
                 }if(data == 3){
                     $('#nombreEmpresa').val("");
                     $('#giroEmpresa').val("");
@@ -372,7 +372,7 @@ $(document).on('click','#lastLogBtn',function(){
                     $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡RFC incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que sea correcto.</a></div>");
 
             $('#txtRFC').focus();
-            $('#txtRFC').css('border-color','#ed0c0c');
+            $('#txtRFC').css('border-color','#cd0808');
                 }
             }
             });
@@ -380,7 +380,7 @@ $(document).on('click','#lastLogBtn',function(){
                      $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡RFC incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verifique que sea correcto.</a></div>");
 
             $('#txtRFC').focus();
-            $('#txtRFC').css('border-color','#ed0c0c');
+            $('#txtRFC').css('border-color','#cd0808');
               }
           }
 
@@ -399,28 +399,28 @@ $(document).on('click','#lastLogBtn',function(){
             $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
 
               $('#txtNombrePer').focus();
-            $('#txtNombrePer').css('border-color','#ed0c0c');
+            $('#txtNombrePer').css('border-color','#cd0808');
 
         }else if(apePat.length == 0 || $('#txtApePat').val().trim == ''){
 
             $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
 
               $('#txtApePat').focus();
-            $('#txtApePat').css('border-color','#ed0c0c');
+            $('#txtApePat').css('border-color','#cd0808');
 
         }else if(apeMat.length == 0 || $('#txtApeMat').val().trim == ''){
 
             $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
 
               $('#txtApeMat').focus();
-            $('#txtApeMat').css('border-color','#ed0c0c');
+            $('#txtApeMat').css('border-color','#cd0808');
 
         }else if(curp.length == 0 || $('#txtCurp').val().trim == ''){
 
               $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
 
               $('#txtCurp').focus();
-            $('#txtCurp').css('border-color','#ed0c0c');
+            $('#txtCurp').css('border-color','#cd0808');
 
 
         }else if(fecNac.length == 0 || $('#txtFechaNac').val().trim == ''){
@@ -428,13 +428,13 @@ $(document).on('click','#lastLogBtn',function(){
             $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
 
               $('#txtFechaNac').focus();
-            $('#txtFechaNac').css('border-color','#ed0c0c');
+            $('#txtFechaNac').css('border-color','#cd0808');
 
         }else if(sexo == 0){
             $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡No debe dejar ningun campo vacio!</strong> <a href='#' class='alert-link'>Por favor, ingrese todos los datos.</a></div>");
 
               $('#cmbSexo').focus();
-            $('#cmbSexo').css('border-color','#ed0c0c');
+            $('#cmbSexo').css('border-color','#cd0808');
 
         }else {
 
@@ -457,7 +457,7 @@ $(document).on('click','#lastLogBtn',function(){
                          $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Curp Registrado!</strong> <a href='#' class='alert-link'>Por favor, verique que sea correcto.</a></div>");
                 $('#txtCurp').val("");
               $('#txtCurp').focus();
-            $('#txtCurp').css('border-color','#ed0c0c');
+            $('#txtCurp').css('border-color','#cd0808');
                     }if(data == 2){
 
                         $('#txtNombrePer').val("");
@@ -479,14 +479,14 @@ $(document).on('click','#lastLogBtn',function(){
             $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Curp incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verique que sea correcto.</a></div>");
 
               $('#txtCurp').focus();
-            $('#txtCurp').css('border-color','#ed0c0c');
+            $('#txtCurp').css('border-color','#cd0808');
         }
 
         }else{
              $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Curp incorrecto!</strong> <a href='#' class='alert-link'>Por favor, verique que sea correcto.</a></div>");
 
               $('#txtCurp').focus();
-            $('#txtCurp').css('border-color','#ed0c0c');
+            $('#txtCurp').css('border-color','#cd0808');
         }
 
 

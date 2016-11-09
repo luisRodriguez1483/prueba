@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<?php include ( 'view/overAll/header.php'); ?>
+<?php include ( 'view/overAll/header.html'); ?>
 
 <body>
-    <?php include( 'view/overAll/indextopNav.php'); ?>
+    <?php include( 'view/overAll/indextopNav.html'); ?>
 
     <div id="modalLogIn" class="modal fade in">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="Close">&times;</button>
                     <h3 style="text-align:center;">¡Bienvenido!</h3>
                 </div>
                 <div id="loginError" style="text-align:center;">
@@ -19,7 +19,7 @@
                     <div role="form" onkeypress="enterLogin(event)">
                         <div class="form-group">
                             <span class="glyphicons glyphicons-user"></span>
-                            <span id="loader"></span>
+                            <span id="spinner"></span>
                             <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogin" placeholder="Usuario">
                             <input type="password" class="form-control" name="txtPasswordLogIn" id="txtPasswordLogin" placeholder="Contraseña">
                         </div>
@@ -111,25 +111,44 @@
     </section>
 
     <section class="mbr-cards mbr-section mbr-section-nopadding" id="index-features1-0" style="background-color: rgb(255, 255, 255);">
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
         <div class="mbr-cards-row row striped" id="begin">
             <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
+<<<<<<< HEAD
                             <span class="card-title">Haz clic sobre la empresa si buscas gente profesional</span>
+=======
+                            <span class="card-title">Haz clic sobre la empresa si buscar gente profesional</span>
+>>>>>>> origin/master
                         </div>
                     </div>
                 </div>
             </div>
             <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
+<<<<<<< HEAD
                    <div class="card cart-block">
                        <div class="container">
                         <div class="card-img">
                             <a href="?view=signUp&type=1"><img src="assets/images/empresa-600x600-48.png" class="card-img-top" alt="Empresa" id="imgCompany"></a>
+=======
+                <div class="container">
+                    <div class="card cart-block">
+                        <div class="card-img">
+                            <a href="?view=signUp&type=2"><img src="assets/images/empresa-600x600-48.png" class="card-img-top" alt="Persona" id="imgPerson"></a>
+>>>>>>> origin/master
                         </div>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
             <div class="mbr-cards-row row striped">
                 <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
                     <div class="container">
@@ -140,23 +159,33 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
                 <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
                     <div class="container">
                         <div class="card cart-block">
                             <div class="card-img">
                                 <a href="?view=signUp&type=2"><img src="assets/images/persona-600x600-10.png" class="card-img-top" alt="Persona" id="imgPerson"></a>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+<<<<<<< HEAD
         <div class="mbr-cards-row row striped" id="aboutUs">
+=======
+         <div class="mbr-cards-row row striped" id="aboutUs">
+>>>>>>> origin/master
             <div class="mbr-cards-col col-xs-3 col-md-3 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
+<<<<<<< HEAD
                               <br>
                                <br>
                                <br>
@@ -164,6 +193,8 @@
                                <br>
                                <br>
                                <br>
+=======
+>>>>>>> origin/master
                             <span class="card-title">¿Quienés somos?</span>
                             <div class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, nulla, tempore! Atque, animi? Beatae distinctio incidunt eaque, aspernatur, ipsum quos maiores voluptatum nam, ad inventore voluptatem praesentium dolores maxime perferendis.
@@ -177,6 +208,7 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
+<<<<<<< HEAD
                            <br>
                                <br>
                                <br>
@@ -184,6 +216,8 @@
                                <br>
                                <br>
                                <br>
+=======
+>>>>>>> origin/master
                             <span class="card-title">Misión</span>
                             <div class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, nulla, tempore! Atque, animi? Beatae distinctio incidunt eaque, aspernatur, ipsum quos maiores voluptatum nam, ad inventore voluptatem praesentium dolores maxime perferendis.
@@ -197,6 +231,7 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
+<<<<<<< HEAD
                            <br>
                                <br>
                                <br>
@@ -204,6 +239,8 @@
                                <br>
                                <br>
                                <br>
+=======
+>>>>>>> origin/master
                             <span class="card-title">Visión</span>
                             <div class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, nulla, tempore! Atque, animi? Beatae distinctio incidunt eaque, aspernatur, ipsum quos maiores voluptatum nam, ad inventore voluptatem praesentium dolores maxime perferendis.
@@ -216,6 +253,7 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
+<<<<<<< HEAD
                            <br>
                                <br>
                                <br>
@@ -223,6 +261,8 @@
                                <br>
                                <br>
                                <br>
+=======
+>>>>>>> origin/master
                             <span class="card-title">Valores</span>
                             <div class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, nulla, tempore! Atque, animi? Beatae distinctio incidunt eaque, aspernatur, ipsum quos maiores voluptatum nam, ad inventore voluptatem praesentium dolores maxime perferendis.
@@ -232,13 +272,17 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
 
 
     </section>
+=======
+>>>>>>> origin/master
 
+    </section>
 
-    <?php include( "view/overAll/indexFooter.php"); include ( 'view/overAll/footer.php'); ?>
+    <?php include( "view/overAll/indexFooter.html"); include ( 'view/overAll/footer.html'); ?>
 </body>
 
 </html>

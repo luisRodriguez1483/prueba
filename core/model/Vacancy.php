@@ -78,7 +78,8 @@ class Vacancy extends Connection{
                                                 </tr>
                                                 <tr>
                                                     <td><input type='hidden' value='$row2[10]' name='txtidVacancy' id='txtIdVacancy'></td>
-                                                    <td><img style='width:50px;height:50px' src='assets/images/choose.png' alt='Postularme a esta vacante' id='postulateToVacancy'/></td>
+                                                    <td><div id='postulateMsg'></div>
+                                                    <img style='width:50px;height:50px' src='assets/images/choose.png' alt='Postularme a esta vacante' id='postulateToVacancy'/></td>
                                                 </tr>
                                             </table>
                                         </div>";

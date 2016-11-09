@@ -75,20 +75,20 @@ $(document).on('click', '#savePost', function() {
     var comments = $('#txtAcoments').val();
     var expirationDate = $('#txtExpirationDate').val();
 
-    var flag1 = (vacancyName.trim() == "" || vacancyName.length === 0) ? 0 : 1;
-    var flag2 = (vacancyPost.trim() == "" || vacancyPost.length === 0) ? 0 : 1;
-    var flag3 = (typeWorking.trim() == "" || typeWorking.length === 0) ? 0 : 1;
-    var flag4 = (numberVacancies.trim() == "" || numberVacancies.length === 0) ? 0 : 1;
-    var flag5 = (experience.trim() == "" || experience.length === 0) ? 0 : 1;
-    var flag6 = (wage.trim() == 0) ? 0 : 1;
-    var flag7 = (comments.trim() == "" || comments.length === 0) ? 0 : 1;
-    var flag8 = (expirationDate.trim() == "" || expirationDate.length === 0) ? 0 : 1;
-    var flag9 = (workingPlace.trim() == "" || workingPlace.length === 0) ? 0 : 1;
+    var flag1 = (vacancyName.trim == "" || vacancyName.length === 0) ? 0 : 1;
+    var flag2 = (vacancyPost.trim == "" || vacancyPost.length === 0) ? 0 : 1;
+    var flag3 = (typeWorking.trim == "" || typeWorking.length === 0) ? 0 : 1;
+    var flag4 = (numberVacancies.trim == "" || numberVacancies.length === 0) ? 0 : 1;
+    var flag5 = (experience.trim == "" || experience.length === 0) ? 0 : 1;
+    var flag6 = (wage.trim == 0) ? 0 : 1;
+    var flag7 = (comments.trim == "" || comments.length === 0) ? 0 : 1;
+    var flag8 = (expirationDate.trim == "" || expirationDate.length === 0) ? 0 : 1;
+    var flag9 = (workingPlace.trim == "" || workingPlace.length === 0) ? 0 : 1;
     if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4 == 1 && flag5 == 1 && flag6 == 1 && flag7 == 1 && flag8 == 1 && flag9 == 1) {
-        var flag=true;
+        var flag="true";
         $.ajax({
             beforeSend: function() {
-                $('#loader').attr('class', 'loader');
+                $('#spinner').attr('class', 'loader');
             },
             url: "core/controller/addVacancyController.php",
             type: "POST",

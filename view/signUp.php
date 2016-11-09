@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 <?php
-include ('view/overAll/header.php');
+include_once ('view/overAll/header.html');
 ?>
 
 <body>
 
 <?php
-include ('view/overAll/signUpTopNav.php');
+include_once ('view/overAll/signUpTopNav.html');
 ?>
 
 
 <section class="engine"></section><section class="mbr-cards mbr-section mbr-section-nopadding mbr-after-navbar" id="page1-features4-0" style="background-color: rgb(255, 255, 255);">
-
-
 
     <div class="mbr-cards-row row">
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 0px;">
@@ -62,8 +60,6 @@ include ('view/overAll/signUpTopNav.php');
 </section>
 
 <section class="mbr-section" id="page1-testimonials1-0" style="background-color: rgb(255, 255, 255); padding-top: 0px; padding-bottom: 160px;">
-
-
 
         <div class="mbr-section mbr-section__container mbr-section__container--middle">
             <div class="container">
@@ -116,8 +112,8 @@ include ('view/overAll/signUpTopNav.php');
                             <input type="text" class="form-control" id="txtMunicipio" placeholder="Municipio">
                             <input type="text" class="form-control" id="txtColonia" placeholder="Colonia">
                             <input type="text" class="form-control" id="txtCalle" placeholder="Calle">
-                            <input type="text" class="form-control" id="txtNumInt" placeholder="Numero interior">
-                            <input type="text" class="form-control" id="txtNumExt" placeholder="Numero exterior">
+                            <input type="text" class="form-control" id="txtNumInt" placeholder="Número interior">
+                            <input type="text" class="form-control" id="txtNumExt" placeholder="Número exterior">
                         </div>
                         <div class="mbr-author card-footer">
                             <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformaciónPersonal" id="secondLogBtn"></div>
@@ -215,7 +211,7 @@ include ('view/overAll/signUpTopNav.php');
 </section>
 <script type="text/javascript" src="../core/controller/userSignUpController.js"></script>
 <?php
-include ('view/overAll/footer.php');
+include ('view/overAll/footer.html');
 ?>
   </body>
 </html>

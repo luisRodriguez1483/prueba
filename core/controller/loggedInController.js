@@ -3,7 +3,7 @@ $(document).on('click', '#closeSession', function() {
     var flag = "true";
     $.ajax({
         beforeSend: function() {
-            $('#loader').attr('class', 'loader');
+            $('#spinner').attr('class', 'loader');
         },
         url: "core/controller/logoutController.php",
         type: "POST",
@@ -19,7 +19,7 @@ $(document).on('click', '#closeSession', function() {
 });
 
 $(document).ready(function() {
-    $('#loader').fadeOut();
+    $('#spinner').fadeOut();
     $('#titleMiddle').fadeOut();
     var flag = "true";
     $.ajax({
@@ -29,7 +29,9 @@ $(document).ready(function() {
             flg: flag
         },
         success: function(msg) {
+
             if (msg == 1) {
+                //Empresa
                 $('#panelContent').html("<div class='btn-group-vertical' role='group'>"
                                     +"<button type='button' class='btn btn-white' id='postVacancy'>Publicar</button>"
                                     +"<button type='button' class='btn btn-white' id='reviewPost'>Revisar Vacantes Publicadas</button>"
@@ -43,9 +45,10 @@ $(document).ready(function() {
                     //console.log( jqxhr.status ); // 200
                 });
             } else if (msg == 2) {
+                //Persona
                 $('#panelContent').html("<div class='btn-group-vertical' role='group'>"
-                                    +"<button type='button' class='btn btn-white' id='applications'>Mis Postulaciones</button>"
-                                    +"<button type='button' class='btn btn-white' id='updateCv'>Actualizar Curriculum</button>"
+                                    +"<button type='button' class='btn btn-white' id='MyApplications'>Mis Postulaciones</button>"
+                                    +"<button type='button' class='btn btn-white' id='updateResume'>Actualizar Curriculum</button>"
                                     +"<button type='button' class='btn btn-white' id='personMessage'>Mensajes</button>"
                                     +"<button type='button' class='btn btn-white' id='viewMyInterviews'>Ver mis citas de entrevista</button>"
                                     +"</div>");
@@ -58,6 +61,9 @@ $(document).ready(function() {
         },
         error: function(textStatus) {
             alert("aqui " + textStatus.responseText);
+        },
+        complete: function(jqxhr){
+
         }
     });
 });
