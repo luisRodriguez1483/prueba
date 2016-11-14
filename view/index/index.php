@@ -117,7 +117,7 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
-                            <span class="card-title">Haz clic sobre la empresa si buscar gente profesional</span>
+                            <span class="card-title">Haz clic sobre la empresa si buscas gente profesional</span>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-img">
-                            <a href="?view=signUp&type=2"><img src="assets/images/empresa-600x600-48.png" class="card-img-top" alt="Persona" id="imgPerson"></a>
+                            <a href="?view=signUp&type=1"><img src="assets/images/empresa-600x600-48.png" class="card-img-top" alt="Persona" id="imgEmpresa"></a>
                         </div>
                     </div>
                 </div>
