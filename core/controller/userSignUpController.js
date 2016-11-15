@@ -467,7 +467,7 @@ $(document).on('click','#lastLogBtn',function(){
                         $('#txtFechaNac').val("");
                         $('#cmbSexo').val(0);
 
-                        $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Has terminado tu registro con exito!</strong> <a href='#' class='alert-link'>Ahora puedes iniciar iniciar sesion</a></div>");
+                        $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Has terminado tu registro con exito!</strong> <a href='#' class='alert-link'>Ahora puedes iniciar sesion</a></div>");
                     $("#lastLog").children().attr("disabled","disabled");
 
                     }
