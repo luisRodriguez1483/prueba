@@ -9,6 +9,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+                    <span class="navbar-logo"><img src="assets/images/snSmall.png" height="40px" width="50px" alt="SocialNetWork"></span>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="Close">&times;</button>
                     <h3 style="text-align:center;">¡Bienvenido!</h3>
                 </div>
@@ -18,16 +19,22 @@
                 <div class="modal-body">
                     <div role="form" onkeypress="enterLogin(event)">
                         <div class="form-group">
-                            <span class="glyphicons glyphicons-user"></span>
                             <span id="spinner"></span>
-                            <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogin" placeholder="Usuario">
-                            <input type="password" class="form-control" name="txtPasswordLogIn" id="txtPasswordLogin" placeholder="Contraseña">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                                <input type="text" class="form-control" name="txtUserLogIn" id="txtUserLogin" placeholder="Usuario">
+                            </div>
+                            <div class="input-group">
+                               <span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+                                <input type="password" class="form-control" name="txtPasswordLogIn" id="txtPasswordLogin" placeholder="Contraseña">
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <input type="button" id="btnLogIn" class="btn btn-success" onclick="login()" value="Enviar" />
+                    <a href='' id="btnLogIn" class="btn btn-success" onclick="login()">Entrar <i class="fa fa-sign-in fa-fw"></i></a>
                 </div>
             </div>
         </div>
@@ -53,11 +60,11 @@
 
                                     <div class="row">
                                         <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                            <h2 class="mbr-section-title display-1">Bienvenido a SocialNetWork</h2>
+                                            <h2 class="mbr-section-title display-1">Bienvenido a SocialNetWork.</h2>
                                             <p class="mbr-section-lead lead">Tu nueva red social.
                                                 <br>Búsqueda de empleo y contratación de personal.</p>
 
-                                            <div class="mbr-section-btn"> <a class="btn btn-lg btn-white btn-white-outline" href="index.html#begin">Da click para comenzar<br></a></div>
+                                            <div class="mbr-section-btn"> <a class="btn btn-lg btn-white btn-white-outline" href="index.html#begin">Da click aquí para comenzar.<br></a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +77,7 @@
 
                                     <div class="row">
                                         <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                            <h2 class="mbr-section-title display-1"></h2>
+                                            <h2 class="mbr-section-title display-1">Bienvenido a SocialNetWork.</h2>
                                             <p class="mbr-section-lead lead">Todos los días una nueva oportunidad de trabajo.</p>
 
                                             <div class="mbr-section-btn"> <a class="btn btn-lg btn-white btn-white-outline" href="index.html#begin">Da click para comenzar</a></div>
@@ -86,7 +93,7 @@
 
                                     <div class="row">
                                         <div class="col-md-8 col-md-offset-2 text-xs-center">
-
+                                            <h2 class="mbr-section-title display-1">Bienvenido a SocialNetWork.</h2>
                                             <p class="mbr-section-lead lead">¡Contrata profesionales con solo un click!</p>
 
                                             <div class="mbr-section-btn"> <a class="btn btn-lg btn-white btn-white-outline" href="index.html#begin">Da click para comenzar</a></div>
@@ -117,7 +124,11 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
+<<<<<<< HEAD
+                            <span class="card-title">Haz clic sobre la empresa si buscar gente profesional.</span>
+=======
                             <span class="card-title">Haz clic sobre la empresa si buscas gente profesional</span>
+>>>>>>> origin/master
                         </div>
                     </div>
                 </div>
@@ -127,7 +138,11 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-img">
+<<<<<<< HEAD
+                            <a href="?view=signUp&type=1"><img src="assets/images/empresa-600x600-48.png" class="card-img-top" alt="Persona" id="imgPerson"></a>
+=======
                             <a href="?view=signUp&type=1"><img src="assets/images/empresa-600x600-48.png" class="card-img-top" alt="Persona" id="imgEmpresa"></a>
+>>>>>>> origin/master
                         </div>
                     </div>
                 </div>
@@ -138,7 +153,7 @@
                     <div class="container">
                         <div class="card cart-block">
                             <div class="card-block">
-                                <span class="card-title">Haz clic sobre la persona si deseas buscar empleo</span>
+                                <span class="card-title">Haz clic sobre la persona si deseas buscar empleo.</span>
                             </div>
                         </div>
                     </div>
@@ -162,13 +177,13 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <span class="card-title">¿Quienés somos?</span>
                             <div class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, nulla, tempore! Atque, animi? Beatae distinctio incidunt eaque, aspernatur, ipsum quos maiores voluptatum nam, ad inventore voluptatem praesentium dolores maxime perferendis.
@@ -182,13 +197,13 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <span class="card-title">Misión</span>
                             <div class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, nulla, tempore! Atque, animi? Beatae distinctio incidunt eaque, aspernatur, ipsum quos maiores voluptatum nam, ad inventore voluptatem praesentium dolores maxime perferendis.
@@ -202,13 +217,13 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <span class="card-title">Visión</span>
                             <div class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, nulla, tempore! Atque, animi? Beatae distinctio incidunt eaque, aspernatur, ipsum quos maiores voluptatum nam, ad inventore voluptatem praesentium dolores maxime perferendis.
@@ -221,13 +236,13 @@
                 <div class="container">
                     <div class="card cart-block">
                         <div class="card-block">
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
 
 
                             <span class="card-title">Valores</span>
