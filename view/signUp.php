@@ -87,9 +87,15 @@ include_once ('view/overAll/signUpTopNav.html');
                         <div id="infoErrorContacto">
 
                         </div>
+                          <div class="form-group">
                         <input type="text" class="form-control" id="txtMail" placeholder="Correo">
+                        </div>
+                        <div class="form-group">
                         <input type="text" class="form-control" id="txtRepMail" placeholder="Repite tu correo">
+                        </div>
+                        <div class="form-group">
                         <input type="tel" maxlength="10" class="form-control" id="txtNumTel" placeholder="Celular o telefono">
+                        </div>
                     </div>
                </div>
 
@@ -108,12 +114,24 @@ include_once ('view/overAll/signUpTopNav.html');
                            <div id="infoErrorDireccion">
 
                            </div>
+                           <div class="form-group">
                             <input type="text" class="form-control" id="txtState" placeholder="Estado" >
+                            </div>
+                            <div class="form-group">
                             <input type="text" class="form-control" id="txtMunicipio" placeholder="Municipio">
+                            </div>
+                            <div class="form-group">
                             <input type="text" class="form-control" id="txtColonia" placeholder="Colonia">
+                            </div>
+                            <div class="form-group">
                             <input type="text" class="form-control" id="txtCalle" placeholder="Calle">
+                            </div>
+                            <div class="form-group">
                             <input type="text" class="form-control" id="txtNumInt" placeholder="Número interior">
+                            </div>
+                            <div class="form-group">
                             <input type="text" class="form-control" id="txtNumExt" placeholder="Número exterior">
+                            </div>
                         </div>
                         <div class="mbr-author card-footer">
                             <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformaciónPersonal" id="secondLogBtn"></div>
@@ -133,10 +151,15 @@ include_once ('view/overAll/signUpTopNav.html');
                         <div id="infoErrorUser">
 
                         </div>
+                            <div class="form-group">
                              <input type="text" class="form-control" id="txtUserReg" placeholder="Usuario">
+                             </div>
+                             <div class="form-group">
                              <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña">
-                             <input type="password" class="form-control" id="txtRepPassword" placeholder="Repite tu contraseña">
-
+                             </div>
+                             <div class="form-group">
+                             <input type="password" class="form-control" id="txtRepPassword" placeholder="Repite contraseña">
+                                </div>
                     </div>
                </div>
             </div>
