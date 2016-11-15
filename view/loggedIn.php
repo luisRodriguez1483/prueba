@@ -4,7 +4,7 @@
 
 <body>
     <script type="text/javascript" src="core/controller/loggedInController.js"></script>
-    <?php include( 'view/overAll/loggedInTopNav.html'); ?>
+    <?php include_once ( 'view/overAll/loggedInTopNav.html'); ?>
 
     <section class="engine"></section>
     <section class="mbr-cards mbr-section mbr-section-nopadding mbr-after-navbar" id="index-features1-0" style="background-color: rgb(255, 255, 255);">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
 
-                <?php include_once('view/modal.html'); ?>
+                    <?php include_once( 'view/modal.html'); ?>
 
                 </div>
             </div>
