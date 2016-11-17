@@ -76,107 +76,68 @@ include_once ('view/overAll/signUpTopNav.html');
     <div class="mbr-testimonials mbr-section mbr-section-nopadding">
         <div class="container">
             <div class="row">
-
                 <div class="col-xs-12 col-lg-4">
-
                     <div class="mbr-testimonial card ">
                         <div class="card-block">
-                             <div class="">
-                <div role="form">
                    <div class="form-group" id="divPrimeraParte">
                         <div id="infoErrorContacto">
 
                         </div>
-                          <div class="form-group">
                         <input type="text" class="form-control" id="txtMail" placeholder="Correo">
-                        </div>
-                        <div class="form-group">
                         <input type="text" class="form-control" id="txtRepMail" placeholder="Repite tu correo">
-                        </div>
-                        <div class="form-group">
                         <input type="tel" maxlength="10" class="form-control" id="txtNumTel" placeholder="Celular o telefono">
-                        </div>
                     </div>
-               </div>
 
-            </div>
                         </div>
                         <div class="mbr-author card-footer">
                             <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformacionUsuario" id="fistLog"></div>
-
-
                         </div>
                     </div>
                 </div>
-                    <div class="col-xs-12 col-lg-4" >
-                       <div class="mbr-testimonial card mbr-testimonial-lg" >
+
+
+                   <div class="col-xs-12 col-lg-4" >
+                       <div class="mbr-testimonial card" >
                         <div class="card-block" id="secondLog">
                            <div id="infoErrorDireccion">
 
                            </div>
-                           <div class="form-group">
                             <input type="text" class="form-control" id="txtState" placeholder="Estado" >
-                            </div>
-                            <div class="form-group">
                             <input type="text" class="form-control" id="txtMunicipio" placeholder="Municipio">
-                            </div>
-                            <div class="form-group">
                             <input type="text" class="form-control" id="txtColonia" placeholder="Colonia">
-                            </div>
-                            <div class="form-group">
                             <input type="text" class="form-control" id="txtCalle" placeholder="Calle">
-                            </div>
-                            <div class="form-group">
                             <input type="text" class="form-control" id="txtNumInt" placeholder="Número interior">
-                            </div>
-                            <div class="form-group">
                             <input type="text" class="form-control" id="txtNumExt" placeholder="Número exterior">
                             </div>
                         </div>
                         <div class="mbr-author card-footer">
                             <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformaciónPersonal" id="secondLogBtn"></div>
-
-
                         </div>
                     </div>
-                </div>
 
-                    <div class="col-xs-12 col-lg-4">
 
-                    <div class="mbr-testimonial card ">
-                        <div class="card-block">
-                             <div class="">
-                <div role="form">
-                   <div class="form-group" id="signUpUserDiv">
+                     <div class="col-xs-12 col-lg-4">
+                    <div class="mbr-testimonial">
+                        <div class="card-block" id="signUpUserDiv">
                         <div id="infoErrorUser">
 
                         </div>
-                            <div class="form-group">
                              <input type="text" class="form-control" id="txtUserReg" placeholder="Usuario">
-                             </div>
-                             <div class="form-group">
                              <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña">
-                             </div>
-                             <div class="form-group">
                              <input type="password" class="form-control" id="txtRepPassword" placeholder="Repite contraseña">
-                                </div>
-                    </div>
-               </div>
-            </div>
+
                         </div>
                         <div class="mbr-author card-footer">
                             <div class="mbr-author-img"><img src="assets/images/verde.jpg" class="img-circle" alt="GuardarInformacionUsuario" id="btnSignUpUser"></div>
-
-
                         </div>
                     </div>
                 </div>
+                </div>
+                <br>
                 <div class="col-xs-20 col-lg-10">
-
                     <div class="mbr-testimonial card mbr-testimonial-lg">
                         <div class="card-block" id="lastLog">
                            <div id="infoErrorUltimoReg" style='text-align:center;'>
-
                            </div>
                             <?php
                             $type = $_GET['type'];
@@ -193,10 +154,12 @@ include_once ('view/overAll/signUpTopNav.html');
                                  <option value="1">Fisica</option>
                                  <option value="2">Moral</option>
                              </select>
+
+                             <div class="form-group">
                              <div id="typePersonRFCDiv">
 
                              </div>
-
+                                </div>
                              <?php
                               }else{
                             ?>

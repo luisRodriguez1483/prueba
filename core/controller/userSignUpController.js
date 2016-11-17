@@ -89,6 +89,10 @@ $(document).on('click','#fistLog',function(){
         $('#txtNumTel').css('border-color','#cd0808');
 
     }else{
+                $('#txtMail').css('border-color','');
+                $('#txtRepMail').css('border-color','');
+                $('#txtNumTel').css('border-color','');
+
     $.ajax({
         url:"core/controller/contactSignUpController.php",
         type:'POST',
@@ -113,9 +117,17 @@ $(document).on('click','#fistLog',function(){
 
             }else if(data == 3){
                 $("#secondLog").children().removeAttr('disabled');
-                $('#txtMail').val("");
+
+                $('#txtMail').css('border-color','green');
+                $('#txtRepMail').css('border-color','green');
+                $('#txtNumTel').css('border-color','green');
+
+                  $('#txtMail').val("");
                 $('#txtRepMail').val("");
                 $('#txtNumTel').val("");
+
+
+
                 $('#infoErrorContacto').html("<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Correcto!</strong> <a href='#' class='alert-link'>Tus datos han sido enviados correctamente</a></div>");
                 $("#divPrimeraParte").children().attr("disabled","disabled");
             }
@@ -172,6 +184,14 @@ $(document).on('click','#secondLogBtn',function(){
         $('#txtNumExt').css('border-color','#cd0808');
 
     }else{
+         $('#txtState').css('border-color','');
+    $('#txtMunicipio').css('border-color','');
+    $('#txtColonia').css('border-color','');
+    $('#txtCalle').css('border-color','');
+    $('#txtNumInt').css('border-color','');
+    $('#txtNumExt').css('border-color','');
+
+
     $.ajax({
      url:"core/controller/addressSignUpController.php",
         type:"POST",
@@ -184,6 +204,13 @@ $(document).on('click','#secondLogBtn',function(){
 
         success:function(data){
                 if(data == 1){
+                    $('#txtState').css('border-color','green');
+    $('#txtMunicipio').css('border-color','green');
+    $('#txtColonia').css('border-color','green');
+    $('#txtCalle').css('border-color','green');
+    $('#txtNumInt').css('border-color','green');
+    $('#txtNumExt').css('border-color','green');
+
     $('#txtState').val("");
     $('#txtMunicipio').val("");
     $('#txtColonia').val("");
@@ -237,6 +264,10 @@ $(document).on('click','#btnSignUpUser',function(){
 
     }else{
 
+         $('#txtUserReg').css("border-color",'');
+                    $('#txtPassword').css("border-color",'');
+                    $('#txtRepPassword').css("border-color",'');
+
     $.ajax({
         url:"core/controller/userSignUpController.php",
         type:'POST',
@@ -253,6 +284,11 @@ $(document).on('click','#btnSignUpUser',function(){
         $('#txtUserReg').css('border-color','#cd0808');
 
                 }if(data == 2){
+
+                    $('#txtUserReg').css("border-color",'green');
+                    $('#txtPassword').css("border-color",'green');
+                    $('#txtRepPassword').css("border-color",'green');
+
                      $('#txtUserReg').val("");
                     $('#txtPassword').val("");
                     $('#txtRepPassword').val("");
@@ -304,11 +340,19 @@ $(document).on('click','#lastLogBtn',function(){
         $('#txtRFC').css('border-color','#cd0808');
 
           }else if(cmbType == 1){
+
+               $('#nombreEmpresa').css("border-color",'');
+                    $('#giroEmpresa').val("border-color",'');
+                    $('#txtRFC').val("border-color",'');
+                    $('#cmbTipoPersona').css('border-color','');
+
               if(rfc.length === 13){
                   $.ajax({
                 url:'core/controller/companySignUpController.php',
                 type:'POST',
-                data:{nombreEmpresa:empresa, giroEmpresa:giro,rfcEmpresa:rfc},
+                data:{nombreEmpresa:empresa,
+                      giroEmpresa:giro,
+                      rfcEmpresa:rfc},
                    success:function(data){
                 if(data == 1){
                      $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Esta empresa ya esta registrada!</strong> <a href='#' class='alert-link'>Por favor, ingrese otro nombre.</a></div>");
@@ -321,6 +365,11 @@ $(document).on('click','#lastLogBtn',function(){
             $('#txtRFC').focus();
         $('#txtRFC').css('border-color','#cd0808');
                 }if(data == 3){
+                    $('#nombreEmpresa').css("border-color",'green');
+                    $('#giroEmpresa').val("border-color",'green');
+                    $('#txtRFC').val("border-color",'green');
+                    $('#cmbTipoPersona').css('border-color','green');
+
                     $('#nombreEmpresa').val("");
                     $('#giroEmpresa').val("");
                     $('#txtRFC').val("");
@@ -345,11 +394,18 @@ $(document).on('click','#lastLogBtn',function(){
 
           }else if(cmbType == 2){
               //persona moral
+                 $('#nombreEmpresa').css("border-color",'');
+                    $('#giroEmpresa').val("border-color",'');
+                    $('#txtRFC').val("border-color",'');
+                    $('#cmbTipoPersona').css('border-color','');
+
               if(rfc.length === 12){
                    $.ajax({
                 url:'core/controller/companySignUpController.php',
                 type:'POST',
-                data:{nombreEmpresa:empresa, giroEmpresa:giro,rfcEmpresa:rfc},
+                data:{nombreEmpresa:empresa,
+                      giroEmpresa:giro,
+                      rfcEmpresa:rfc},
                    success:function(data){
                 if(data == 1){
                      $('#infoErrorUltimoReg').html("<div class='alert alert-dismissible alert-danger'><button type='button' class='close' data-dismiss='alert'>x</button><strong>¡Esta empresa ya esta registrada!</strong> <a href='#' class='alert-link'>Por favor, ingrese otro nombre.</a></div>");
@@ -362,6 +418,11 @@ $(document).on('click','#lastLogBtn',function(){
             $('#txtRFC').focus();
         $('#txtRFC').css('border-color','#cd0808');
                 }if(data == 3){
+                     $('#nombreEmpresa').css("border-color",'green');
+                    $('#giroEmpresa').val("border-color",'green');
+                    $('#txtRFC').val("border-color",'green');
+                    $('#cmbTipoPersona').css('border-color','green');
+
                     $('#nombreEmpresa').val("");
                     $('#giroEmpresa').val("");
                     $('#txtRFC').val("");
@@ -437,7 +498,12 @@ $(document).on('click','#lastLogBtn',function(){
             $('#cmbSexo').css('border-color','#cd0808');
 
         }else {
-
+                 $('#txtNombrePer').css("border-color",'');
+                        $('#txtApePat').css("border-color",'');
+                        $('#txtApeMat').css("border-color",'');
+                        $('#txtCurp').css("border-color",'');
+                        $('#txtFechaNac').css("border-color",'');
+                        $('#cmbSexo').css("border-color",'');
             if(curp.length === 18){
 
             if(curp.match(/^([a-z]{4})([0-9]{6})([a-z]{6})([0-9]{2})$/i)){
@@ -459,6 +525,13 @@ $(document).on('click','#lastLogBtn',function(){
               $('#txtCurp').focus();
             $('#txtCurp').css('border-color','#cd0808');
                     }if(data == 2){
+
+                         $('#txtNombrePer').css("border-color",'green');
+                        $('#txtApePat').css("border-color",'green');
+                        $('#txtApeMat').css("border-color",'green');
+                        $('#txtCurp').css("border-color",'green');
+                        $('#txtFechaNac').css("border-color",'green');
+                        $('#cmbSexo').css("border-color",'green');
 
                         $('#txtNombrePer').val("");
                         $('#txtApePat').val("");
@@ -488,12 +561,6 @@ $(document).on('click','#lastLogBtn',function(){
               $('#txtCurp').focus();
             $('#txtCurp').css('border-color','#cd0808');
         }
-
-
-
-
-
-
 
         }
 
