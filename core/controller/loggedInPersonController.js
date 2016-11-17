@@ -10,7 +10,7 @@ $(document).ready(function(){
         success: function (msg){
             if(msg == 2){
                 $('#middleTitle').text("Algunos empleos para ti");
-                $('#stateMessage').html("<div class='alert alert-dismissible alert-info'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>¡No se han encontrado vacantes!</strong> <a href='#' class='alert-link'>Pero no te precupes seguiremos buscando la mejor opcion para ti</a></div>");
+                $('#stateMessage').html("<div class='alert alert-dismissible alert-info'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>¡No se han encontrado vacantes de acuerdo a tu perfil!</strong> <a href='#' class='alert-link'>Pero no te precupes seguiremos buscando la mejor opcion para ti</a></div>");
             }else{
                 $('#middleTitle').text("Algunos empleos para ti");
                 $('#middlePanel').html(msg);
@@ -60,40 +60,54 @@ $(document).on('click','#postulateToVacancy',function(){
        $('#middlePanel').html("");
        $('#middleTitle').html("");
        $('#middleTitle').html("Actualiza tus Datos");
-       $('#middlePanel').html("<div class='list-group'>"
+      /* $('#middlePanel').html("<div class='list-group'>"
                                         +"<a href='#' id='schoolingInformation' class='list-group-item active' role='button' data-toggle='modal' data-target='#modalUpdate'>Información Académica </a>"
                                         +"<a href='#' id='professionalInformation' class='list-group-item' role='button' data-toggle='modal' data-target='#modalUpdate'>Información Profesional</a>"
                                           +"<a href='#' id='courses' class='list-group-item' role='button' data-toggle='modal' data-target='#modalUpdate'>Cursos</a>"
                                           +"<a href='#' id='workingExperience' class='list-group-item' role='button' data-toggle='modal' data-target='#modalUpdate'>Experiencia Laboral</a>"
                                           +"<a href='#' id='languages' class='list-group-item' role='button' data-toggle='modal' data-target='#modalUpdate'>Idiomas</a>"
                                           +"<a href='#' id='otherInformation' class='list-group-item' role='button' data-toggle='modal' data-target='#modalUpdate'>Otros Datos</a>"
-                                +"</div>");
-   });
+                                +"</div>");*/
 
+       $('#middlePanel').html("<div class='list-group'>"
+                                        +"<a href='#' id='schoolingInformation' class='list-group-item active' role='button'>Información Académica </a>"
+                                        +"<div id='displaySchool'></div>"
+                                        +"<a href='#' id='professionalInformation' class='list-group-item' role='button' data-toggle='modal' data-target='#modalUpdate'>Información Profesional</a>"
+                                          +"<a href='#' id='courses' class='list-group-item' role='button' data-toggle='modal' data-target='#modalUpdate'>Cursos</a>"
+                                          +"<a href='#' id='workingExperience' class='list-group-item' role='button' data-toggle='modal' data-target='#modalUpdate'>Experiencia Laboral</a>"
+                                          +"<a href='#' id='languages' class='list-group-item' role='button' data-toggle='modal' data-target='#modalUpdate'>Idiomas</a>"
+                                          +"<a href='#' id='otherInformation' class='list-group-item' role='button' data-toggle='modal' data-target='#modalUpdate'>Otros Datos</a>"
+                                +"</div>");
+
+
+                              /*$('#middlePanel').html("<div class='dropdown'>"
+  +"<button class='btn btn-default dropdown-toggle' type='button' id='dropdownMenu1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>Dropdown<span class='caret'></span></button>"
+  +"<ul class='dropdown-menu' aria-labelledby='dropdownMenu1'>"
+    +"<li><a href='#' id='schoolingInformation' data-toggle='modal' data-target='#modalUpdate'>Información Académica</a></li>"
+    +"<li><a href='#' id='professionalInformation' data-toggle='modal' data-target='#modalUpdate'>Información Profesional</a></li>"
+    +"<li><a href='#' id='courses' data-toggle='modal' data-target='#modalUpdate'>Cursos</a></li>"
+    +"<li><a href='#' id='workingExperience' data-toggle='modal' data-target='#modalUpdate'>Experiencia Laboral</a></li>"
+    +"<li><a href='#' id='languages' data-toggle='modal' data-target='#modalUpdate'>Idiomas</a></li>"
+    +"<li role='separator' class='divider'></li>"
+    +"<li><a href='#' data-toggle='modal' data-target='#modalUpdate' id='otherInformation'>Otra información</a></li>"
+  +"</ul>"
++"</div>");*/
+
+   });
+///*********ESCUELA************////
 $(document).on('click','#schoolingInformation',function(){
     var flag="true";
     $.ajax({
         beforeSend:function(){
             $('#spinner').attr('class','loader');
-            $('#button1').show();
-            $('#button2').hide();
-            $('#button3').hide();
-            $('#button4').hide();
-            $('#button5').hide();
-            $('#button6').hide();
+
         },
-        url: "core/controller/getResumeAcademicDataController.php",
+        url: "core/controller/getAcademicDataController.php",
         type: "POST",
         data: {flg:flag},
         success: function(msg){
-            $('#modalUpdateTitle').html("Formación Académica");
-            $('#modalBodyUpdate').html(msg);
-            var radBtn=$('#txtIsStudying').val();
-            if(radBtn==0){
-                $('#radIsStudyingN').attr('checked',true);
-            }else{
-                $('#radIsStudyingY').attr('checked',true);
-            }
+            $('#displaySchool').html(msg);
+            $('#displaySchool').append("</br><button class='btn-xs btn-black'>Nuevo<i class='fa fa-plus-square fa-fw'></i></button>");
         },
         error: function(jqXHR,error,status){
 
@@ -104,9 +118,41 @@ $(document).on('click','#schoolingInformation',function(){
     });
 });
 
-$(document).on('click','#saveChangesBtn',function(){
+$(document).on('click','#updateAcademicBtn',function(){
+   var key=$('#txtResumeAcademic').val();
+
+    alert("id "+key);
     var flag="true";
-    var cv=$('#txtAcadDat').val();
+    $.ajax({
+           beforeSend: function(){
+               $('#spinner').attr('class','loader');
+           },
+            url:"core/controller/updateAcademicDataController.php",
+            type:"POST",
+            data:{flg:flag,key:key},
+
+            success: function(msg){
+                alert(msg);
+                  /*$('#modalUpdateTitle').html("Formación Académica");
+            $('#modalBodyUpdate').html(msg);
+            var radBtn=$('#txtIsStudying').val();
+            if(radBtn=='No'){
+                $('#radIsStudyingN').attr('checked',true);
+            }else{
+                $('#radIsStudyingY').attr('checked',true);
+            }*/
+            },
+            error: function(jqXHR,status,error){
+
+            },
+            complete: function(jqXHR){
+                $('#spinner').attr('class','');
+            }
+        });
+});
+
+$(document).on('click','#saveChangesBtn',function(){
+   /* var cv=$('#txtAcadDat').val();
     var actualGrade=$('#txtActualGrade').val();
     var school=$('#txtSchoolName').val();
     var schoolStart=$('#txtSchoolStart').val();
@@ -142,14 +188,15 @@ $(document).on('click','#saveChangesBtn',function(){
            beforeSend: function(){
                $('#spinner').attr('class','loader');
            },
-            url:"core/controller/updateResumeAcademicDataController.php",
+            url:"core/controller/updateAcademicDataController.php",
             type:"POST",
-            data:{flg:flag,resume:cv,nowGrade:actualGrade,schoolName:school,beginSchool:schoolStart,
+            data:{resume:cv,nowGrade:actualGrade,schoolName:school,beginSchool:schoolStart,
                   endSchool:schoolFinish,laGrade:lastGrade,nowStudy:study},
 
             success: function(msg){
                 $('#stateMessage').html("<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>&times;</button><strong>¡Información almacenada!</strong> <a href='#' class='alert-link'>Tus informacón académica ha sido actualizada de manera exitosa.</a></div>");
                 $('#modalUpdate').attr('class','modal fade out');
+                $('#close').trigger('click');
             },
             error: function(jqXHR,status,error){
 
@@ -159,26 +206,29 @@ $(document).on('click','#saveChangesBtn',function(){
             }
         });
     }
-});
+});*/
 
+/////////***********info profesional********////////
 $(document).on('click','#professionalInformation',function(){
    var flag="true";
     $.ajax({
       beforeSend: function(){
           $('#spinner').attr('class','loader');
       },
-       url:"core/controller/getResumeProfessionalDataController.php",
+       url:"core/controller/updateResumeProfessionalDataController.php",
        type:"POST",
        data:{flg:flag},
        success: function(msg){
            $('#modalUpdateTitle').html("Información profesional");
            $('#modalBodyUpdate').html(msg);
-           $('#button1').hide();
-           $('#button2').show();
-           $('#button3').hide();
-           $('#button4').hide();
-           $('#button5').hide();
-           $('#button6').hide();
+           $('#academicGroupBtn').hide();
+           $('#profInfGroupBtn').show();
+           $('#cancelProfInfBtn').hide();
+           $('#coursesGroupBtn').hide();
+           $('#labExpGroupBtn').hide();
+           $('#langGroupBtn').hide();
+           $('#otherDataGroupBtn').hide();
+           $('#stateMessage').html("");
        },
        error: function(jqXHR,status,error){
            alert(jqXHR);
@@ -189,24 +239,24 @@ $(document).on('click','#professionalInformation',function(){
    });
 });
 
-$(document).on('click','#addProfessionalInformationBtn',function(){
+$(document).on('click','#addProfInfBtn',function(){
     $('#newProfessionalInformation').toggle();
-    $('#addProfessionalInformationBtn').hide();
+    $('#addProfInfBtn').hide();
+    $('#cancelProfInfBtn').show();
 });
 
-$(document).on('click','#hideProfessionalInformationBtn',function(){
+$(document).on('click','#cancelProfInfBtn',function(){
     $('#newProfessionalInformation').hide();
-    $('#addProfessionalInformationBtn').toggle();
+    $('#addProfInfBtn').show();
+    $(this).hide();
 });
 
 $(document).on('click','#saveChangesBtn2',function(){
-    //clic al añadir nueva info profesional  despliega campos y aqui el ajax toma esos campos y hace un insert
-    $('#').
    $.ajax({
       beforeSend: function(){
           $('#spinner').attr('class','loader');
       },
-       url: "core/controller/getResumeProfessionalDataController.php",
+       url: "core/controller/updateResumeProfessionalDataController.php",
        type:"POST",
        data:{},
        success: function(msg){
@@ -222,25 +272,26 @@ $(document).on('click','#saveChangesBtn2',function(){
 
 });
 
-
+/////******CURSOS**********/////////
 $(document).on('click','#courses' ,function(){
    var flag="true";
     $.ajax({
       beforeSend: function(){
           $('#spinner').attr('class','loader');
       },
-       url: "core/controller/getResumeCoursesController.php",
+       url: "core/controller/updateResumeCoursesController.php",
        type: "POST",
        data: {flg:flag},
        success: function(msg){
            $('#modalBodyUpdate').html(msg);
            $('#modalUpdateTitle').html("Cursos");
-           $('#button1').hide();
-           $('#button2').hide();
-           $('#button3').show();
-           $('#button4').hide();
-           $('#button5').hide();
-           $('#button6').hide();
+           $('#academicGroupBtn').hide();
+           $('#profInfGroupBtn').hide();
+           $('#coursesGroupBtn').show();
+           $('#labExpGroupBtn').hide();
+           $('#langGroupBtn').hide();
+           $('#otherDataGroupBtn').hide();
+           $('#stateMessage').html("");
        },
        error: function(jqXHR,status,error){
            alert(jqXHR.responseXML+status+error);
@@ -257,7 +308,7 @@ $(document).on('click','#button3',function(){
        beforeSend: function(){
            $('#spinner').attr('class','loader');
        },
-        url: "core/controller/getResumeCoursesController.php",
+        url: "core/controller/updateResumeCoursesController.php",
         type:"POST",
         data:{},
         success: function(msg){
@@ -272,7 +323,7 @@ $(document).on('click','#button3',function(){
     });
 
 });
-
+/////********EXPERIENCIA LABORAL*******//////
 $(document).on('click','#workingExperience',function(){
     var flag="true";
     $.ajax({
@@ -280,17 +331,18 @@ $(document).on('click','#workingExperience',function(){
             $('#spinner').attr('class','loader');
             $('#modalUpdateTitle').html("Información laboral");
        },
-        url: "core/controller/getResumeWorkingExperienceController.php",
+        url: "core/controller/updateResumeWorkingExperienceController.php",
         type: "POST",
         data:{flg:flag},
         success: function(msg){
             $('#modalBodyUpdate').html(msg);
-            $('#button1').hide();
-            $('#button2').hide();
-            $('#button3').hide();
-            $('#button4').show();
-            $('#button5').hide();
-            $('#button6').hide();
+            $('#academicGroupBtn').hide();
+            $('#profInfGroupBtn').hide();
+            $('#coursesGroupBtn').hide();
+            $('#labExpGroupBtn').show();
+            $('#langGroupBtn').hide();
+            $('#otherDataGroupBtn').hide();
+            $('#stateMessage').html("");
         },
         error: function(jqXHR){
 
@@ -301,25 +353,26 @@ $(document).on('click','#workingExperience',function(){
 
     });
 });
-
+/////*****IDIOMAS*****//////
 $(document).on('click','#languages',function(){
      var flag="true";
     $.ajax({
         beforeSend: function(){
            $('#spinner').attr('class','loader');
        },
-        url: "core/controller/getResumeLanguageController.php",
+        url: "core/controller/updateResumeLanguageController.php",
         type: "POST",
         data:{flg:flag},
         success: function(msg){
             $('#modalUpdateTitle').html("Idiomas");
             $('#modalBodyUpdate').html(msg);
-            $('#button1').hide();
-            $('#button2').hide();
-            $('#button3').hide();
-            $('#button4').hide();
-            $('#button5').show();
-            $('#button6').hide();
+            $('#academicGroupBtn').hide();
+            $('#profInfGroupBtn').hide();
+            $('#coursesGroupBtn').hide();
+            $('#labExpGroupBtn').hide();
+            $('#langGroupBtn').show();
+            $('#otherDataGroupBtn').hide();
+            $('#stateMessage').html("");
         },
         error: function(jqXHR){
 
@@ -330,25 +383,26 @@ $(document).on('click','#languages',function(){
 
     });
 });
-
+////******OTRA INFORMACION****////
 $(document).on('click','#otherInformation',function(){
     var flag="true";
     $.ajax({
         beforeSend: function(){
            $('#spinner').attr('class','loader');
        },
-        url: "core/controller/getResumeOtherInformationController.php",
+        url: "core/controller/updateResumeOtherInformationController.php",
         type: "POST",
         data:{flg:flag},
         success: function(msg){
             $('#modalBodyUpdate').html(msg);
             $('#modalUpdateTitle').html("Otros datos de interés");
-            $('#button1').hide();
-            $('#button2').hide();
-            $('#button3').hide();
-            $('#button4').hide();
-            $('#button5').hide();
-            $('#button6').show();
+            $('#academicGroupBtn').hide();
+            $('#profInfGroupBtn').hide();
+            $('#coursesGroupBtn').hide();
+            $('#labExpGroupBtn').hide();
+            $('#langGroupBtn').hide();
+            $('#otherDataGroupBtn').show();
+            $('#stateMessage').html("");
         },
         error: function(jqXHR){
 
