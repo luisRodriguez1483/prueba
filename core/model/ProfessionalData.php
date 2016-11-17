@@ -23,10 +23,7 @@ class ProfessionalData extends Connection{
 
             if($executeQuery2){
                 $row2=mysqli_fetch_array($executeQuery2);
-                echo "<a class='btn btn-success' href='#' id='addProfessionalInformationBtn'><i class='fa fa-plus'></i>Agregar nuevo título</a>
-
-                   <div id='newProfessionalInformation' style='display:none;'>
-                        <a class='btn btn-danger' href='#' id='hideProfessionalInformationBtn'><i class='fa fa-window-close'></i>Cancelar</a>
+                echo "<div id='newProfessionalInformation' style='display:none;'>
                         <div class='form-group'>
                             <label for='txtNewDegree' class='control-label'>Titulado en: </label>
                             <input type='text' class='form-control' id='txtNewDegree' placeholder='Ing. en TIC'>
@@ -35,7 +32,6 @@ class ProfessionalData extends Connection{
                             <label for='txtNewProfCed' class='control-label'>No. Cédula Profesional: </label>
                             <input type='text' class='form-control' id='txtProCed' placeholder='Si cuenta con ella especifique el motivo o si esta en trámite indíquelo'>
                         </div>
-
                         <hr>
                     </div>
                     <div class='form-group'>

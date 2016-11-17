@@ -31,11 +31,10 @@
                             <div id="stateMessage">
 
                             </div>
-                            <div id="spinner">
-
-                            </div>
                             <div id="middlePanel">
+                                <span id="spinner">
 
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -45,7 +44,9 @@
                 </div>
             </div>
             <div class="mbr-cards-col col-xs-12 col-md-4 col-lg-3" style="padding-top: 160px; padding-bottom: 160px;">
+
                 <div class="container">
+
                     <div class="card cart-block">
 
                         <div class="card-block">
